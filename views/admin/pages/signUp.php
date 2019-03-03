@@ -36,6 +36,17 @@ $_SESSION['current_page'] = 'login';?>
 			</div>
 
 			<div class="form__field">
+				<label for="signup_email"><svg class="icon">
+						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#user"></use>
+					</svg><span class="hidden">Email Address</span></label>
+				<select class="form-control form__input" name="child_gender">
+					<option value="Male">Male</option>
+					<option value="Female">Female</option>
+				</select>
+<!--				<input id="signup_email" type="text" name="signup_email" class="form__input" placeholder="Email Address" required>-->
+			</div>
+
+			<div class="form__field">
 				<label for="signup_password"><svg class="icon">
 						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#lock"></use>
 					</svg><span class="hidden">Password</span></label>
@@ -54,7 +65,7 @@ $_SESSION['current_page'] = 'login';?>
 
 			<div class="form__field">
 				<input type="submit" value="Sign In" style="background-color: var(--loginSubmitBackgroundColor);color: var(--loginSubmitColor);font-weight: 700;text-transform: uppercase;width: 100%;border-radius: var(--loginBorderRadus);padding: 1rem;margin-right: 1rem;text-align: center;cursor: pointer;">
-				
+
 				<a href="<?php echo BASEPAGES;?>login2.php" type="submit" value="Cancel" style="background-color: var(--loginSubmitBackgroundColor);color: var(--loginSubmitColor);font-weight: 700;text-transform: uppercase;width: 100%;border-radius: var(--loginBorderRadus);padding: 1rem;margin-left: 1rem;text-align: center;cursor: pointer;">Cancel</a>
 			</div>
 		</form>
