@@ -36,13 +36,6 @@ $_SESSION['current_page'] = 'login';?>
 			</div>
 
 			<div class="form__field">
-				<label for="signup_username"><svg class="icon">
-						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#user"></use>
-					</svg><span class="hidden">Username</span></label>
-				<input id="signup_username" type="text" name="signup_username" class="form__input" placeholder="Username" required>
-			</div>
-
-			<div class="form__field">
 				<label for="signup_password"><svg class="icon">
 						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#lock"></use>
 					</svg><span class="hidden">Password</span></label>
