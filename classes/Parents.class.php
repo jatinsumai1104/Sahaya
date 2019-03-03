@@ -12,7 +12,7 @@ class Parents
 {
     private $collection;
     private $database;
-    private $collectionName = "Parents.class";
+    private $collectionName = "Parents";
     private $parent_id;
     private $is_single_parent;
     private $parent_name;
