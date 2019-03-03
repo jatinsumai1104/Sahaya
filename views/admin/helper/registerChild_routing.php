@@ -5,6 +5,8 @@
  * Date: 03-03-2019
  * Time: 07:30 PM
  */
+
+session_start();
 require_once ("../../includes/bootstrap.php");
 if(isset($_POST["register_child"])){
     extract($_POST);
@@ -28,7 +30,8 @@ if(isset($_POST["register_child"])){
 
     $child_details_array=["child_name"=>$child_first_name." ".$child_last_name,"gender"=>$gender,"dob"=>$dob,"birthmark"=>$birthmark,"disability"=>$disability,"date_of_admission"=>$date_of_admission,"source_of_admission"=>$source_of_admission,"child_image"=>$child_image,"image_extension"=>$image_extension,"current_standard"=>$current_standard,"personal_documents"=>$personal_documents,"document_extension"=>$document_extension];
 
-    $child_object =new Children();
+
+    $child_object =new Children($_SESSION['branch']);
     $child_object->insertChild($child_details_array);
 
 //    var_dump($child_details_array);

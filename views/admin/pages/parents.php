@@ -5,10 +5,11 @@
  * Date: 04-03-2019
  * Time: 01:38 AM
  */
+session_start();
 
 require_once ("../../includes/bootstrap.php");
 
-$parents = new Parents("testing");
+$parents = new Parents($_SESSION['branch']);
 
 $single_parents = iterator_to_array($parents->getSingleParents());
 

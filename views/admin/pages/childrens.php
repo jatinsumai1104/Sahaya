@@ -37,8 +37,8 @@ require_once('../includes/breadcrumbs.php');
 
 
     <?php
-
-        $children = new Children("testing");
+        session_start();
+        $children = new Children($_SESSION['branch']);
 
         $rs = $children->getChildren();
 
