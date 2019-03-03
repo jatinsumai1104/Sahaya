@@ -1,4 +1,8 @@
 <?php 
+require_once('../includes/header-bp.php');
+require_once('../includes/navigation.php');
+require_once('../includes/sidebar.php');
+require_once('../includes/breadcrumbs.php');
 //print_r($_SESSION);
 file_put_contents("assets/documents/".$childDetails[0]['child_id'].".".$childDetails[0]['child_documents']->document_ext, $childDetails[0]['child_documents']->document_blob);
 ?>
@@ -105,3 +109,6 @@ file_put_contents("assets/documents/".$childDetails[0]['child_id'].".".$childDet
 
 	</div>
 </div>
+<?php 
+require_once('../includes/footer-bp.php');
+?>

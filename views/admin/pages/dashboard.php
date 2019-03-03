@@ -1,3 +1,9 @@
+<?php 
+require_once('../includes/header-bp.php');
+require_once('../includes/navigation.php');
+require_once('../includes/sidebar.php');
+require_once('../includes/breadcrumbs.php');
+?>
 <div class="row">
 	<?php if($_SESSION['employee_role'] == 1){?>
 	<div class="panel panel-container">
@@ -97,3 +103,6 @@
 	</div>
 	<?php }?>
 </div>
+<?php 
+require_once('../includes/footer-bp.php');
+?>

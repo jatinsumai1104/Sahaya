@@ -1,4 +1,6 @@
-<?php $_SESSION['current_page'] = 'login';?>
+<?php 
+require_once('../../includes/bootstrap.php');
+$_SESSION['current_page'] = 'login';?>
 <!DOCTYPE html>
 <html>
 
@@ -60,7 +62,7 @@
 			<div class="form__field">
 				<input type="submit" value="Sign In" style="background-color: var(--loginSubmitBackgroundColor);color: var(--loginSubmitColor);font-weight: 700;text-transform: uppercase;width: 100%;border-radius: var(--loginBorderRadus);padding: 1rem;margin-right: 1rem;text-align: center;cursor: pointer;">
 				
-				<a href="<?php echo BASEURL; ?>logout" type="submit" value="Cancel" style="background-color: var(--loginSubmitBackgroundColor);color: var(--loginSubmitColor);font-weight: 700;text-transform: uppercase;width: 100%;border-radius: var(--loginBorderRadus);padding: 1rem;margin-left: 1rem;text-align: center;cursor: pointer;">Cancel</a>
+				<a href="<?php echo BASEURL;?>admin/login" type="submit" value="Cancel" style="background-color: var(--loginSubmitBackgroundColor);color: var(--loginSubmitColor);font-weight: 700;text-transform: uppercase;width: 100%;border-radius: var(--loginBorderRadus);padding: 1rem;margin-left: 1rem;text-align: center;cursor: pointer;">Cancel</a>
 			</div>
 		</form>
 
