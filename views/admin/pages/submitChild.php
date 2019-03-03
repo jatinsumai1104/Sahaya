@@ -1,4 +1,9 @@
-<?php if(isset($updateDetailsData)){  ?>
+<?php 
+require_once('../includes/header-bp.php');
+require_once('../includes/navigation.php');
+require_once('../includes/sidebar.php');
+require_once('../includes/breadcrumbs.php');
+if(isset($updateDetailsData)){  ?>
 <!--Update Panel-->
 <div class="row">
 	<div class="col-lg-12">
@@ -210,3 +215,4 @@
 			</div>
 		</div><!-- /.panel-->
 		<?php } ?>
+<?php require_once('../includes/footer-bp.php');?>

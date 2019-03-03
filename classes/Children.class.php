@@ -17,16 +17,11 @@ class Children
     private $birthmark;
     private $disability;
     private $date_of_admission;
-    private $s
-ource_of_admission;
+    private $source_of_admission;
     private $child_image;
     private $current_standard;
     private $personal_documents;
     private $is_adopted = "NO";
-
-
-
-
     private $collection;
     private $collectionName = "Children";
 
@@ -107,3 +102,5 @@ ource_of_admission;
     //function to retrieve children for a particular age group.
 
 }
+echo "hi";
+?>
