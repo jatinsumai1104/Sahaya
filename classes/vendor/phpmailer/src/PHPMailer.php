@@ -18,8 +18,10 @@
  * FITNESS FOR A PARTICULAR PURPOSE.
  */
 
-namespace PHPMailer\PHPMailer;
 
+
+namespace PHPMailer\PHPMailer;
+require_once("Exception.php");
 /**
  * PHPMailer - PHP email creation and transport class.
  *

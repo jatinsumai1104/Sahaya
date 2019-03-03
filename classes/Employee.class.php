@@ -34,16 +34,20 @@ class Employee
     public function registerEmployee($array){
         extract($array);
 
+		if($emp_password == $emp_confirm_password){
+			if(($this->collection->countDocuments(["emp_email"=>$emp_email]))>0){
+				return false;
+			}
 
-        if(($this->collection->findOne(["emp_email"=>$emp_email]))>0){
-            return false;
-        }
+			$emp_id = $branch . "_EMP_".($this->getEmployeeCount()+1);
 
-        $emp_id = $branch . "_EMP_".(getEmpCount()+1);
+			$this->collection->insertOne(["emp_id"=>$emp_id,"emp_email"=>$emp_email,"emp_password"=>$emp_password,"branch_id"=>$branch]);
 
-        $this->collection->insertOne(["emp_id"=>$emp_id,"emp_email"=>$emp_email,"emp_password"=>$emp_password,"branch_id"=>$branch]);
-		
-		$this->sendRegistrationMail($emp_email);
+			$this->sendRegistrationMail($emp_email);
+		}
+        else{
+			echo "Please Enter Same Password";
+		}
     }
 
     public function insertEmployee($emp_id,$formdata){
@@ -82,13 +86,14 @@ class Employee
     }
 
 	public function sendRegistrationMail($email){
-		$ciphertext_email= $this->encryption->encrypt($email);
+//		$ciphertext_email= $this->encryption->encrypt($email);
+		echo "hello";
 		require_once('Mailer.php');
 		$mailer = new Mailer();
 		$user_email = "$email";
 		$subject = "Sahaya Account Confirmation";
 
-		$base_url_link = "http://localhost/Sahaya/views/admin/pages/registration-page.php?XSRS=$ciphertext_email";
+		$base_url_link = "http://localhost/Sahaya/views/admin/pages/registration-page.php?XSRS=$email";
 		$body = "
 		<div style='font-family:Roboto; font-size:16px; max-width: 600px; line-height: 21px;'>
 			<h4>Hello,</h4>
@@ -106,11 +111,14 @@ class Employee
 
 		$boolean=$mailer->send_mail($user_email, $body, $subject);
 		if($boolean){
-			$_SESSION['status']="SUCCESSMAIL";
-			header("Location: ../..");
+			$_SESSION['status']="SUCCESSMAIL";			
+			header("Location: ../pages/login2.php");
 		}
-		else
+		else{
 			$_SESSION['status']="FAILUREMAIL";
+			header("Location: ../pages/login2.php");
+		}
+			
 
 	}
 	

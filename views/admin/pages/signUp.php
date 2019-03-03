@@ -26,22 +26,22 @@ $_SESSION['current_page'] = 'login';?>
 
 	<div class="grid">
 
-		<form action="<?php echo BASEURL;?>signup" method="POST" class="form login">
+		<form action="<?php echo BASEURL;?>views/admin/helper/login_routing.php" method="POST" class="form login">
 
 			<div class="form__field">
 				<label for="signup_email"><svg class="icon">
 						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#user"></use>
 					</svg><span class="hidden">Email Address</span></label>
-				<input id="signup_email" type="text" name="signup_email" class="form__input" placeholder="Email Address" required>
+				<input id="signup_email" type="text" name="emp_email" class="form__input" placeholder="Email Address" required>
 			</div>
 
 			<div class="form__field">
-				<label for="signup_email"><svg class="icon">
+				<label><svg class="icon">
 						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#user"></use>
-					</svg><span class="hidden">Email Address</span></label>
-				<select class="form-control form__input" name="child_gender">
-					<option value="Male">Dadar</option>
-					<option value="Female">Kurla</option>
+					</svg><span class="hidden">Select Your Location</span></label>
+				<select class="form-control form__input" name="branch">
+					<option class="form__input" value="dadar">Dadar</option>
+					<option class="form__input" value="kurla">Kurla</option>
 				</select>
 <!--				<input id="signup_email" type="text" name="signup_email" class="form__input" placeholder="Email Address" required>-->
 			</div>
@@ -50,21 +50,21 @@ $_SESSION['current_page'] = 'login';?>
 				<label for="signup_password"><svg class="icon">
 						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#lock"></use>
 					</svg><span class="hidden">Password</span></label>
-				<input id="signup_password" type="password" name="signup_password" class="form__input" placeholder="Password" required>
+				<input id="signup_password" type="password" name="emp_password" class="form__input" placeholder="Password" required>
 			</div>
 
 			<div class="form__field">
 				<label for="signup_confirm_password"><svg class="icon">
 						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#lock"></use>
-					</svg><span class="hidden">Password</span></label>
-				<input id="signup_confirm_password" type="password" name="signup_confirm_password" class="form__input" placeholder="re-password" required>
+					</svg><span class="hidden">Re-Password</span></label>
+				<input id="signup_confirm_password" type="password" name="emp_confirm_password" class="form__input" placeholder="Re-Enter-password" required>
 			</div>
 			<div class="form__field">
 				<p> <span>*</span> Registration is still Remaining (Please Check your Inbox and Continue)</p>
 			</div>
 
 			<div class="form__field">
-				<input type="submit" value="Sign In" style="background-color: var(--loginSubmitBackgroundColor);color: var(--loginSubmitColor);font-weight: 700;text-transform: uppercase;width: 100%;border-radius: var(--loginBorderRadus);padding: 1rem;margin-right: 1rem;text-align: center;cursor: pointer;">
+				<input type="submit" value="Sign In" style="background-color: var(--loginSubmitBackgroundColor);color: var(--loginSubmitColor);font-weight: 700;text-transform: uppercase;width: 100%;border-radius: var(--loginBorderRadus);padding: 1rem;margin-right: 1rem;text-align: center;cursor: pointer;" name="registerSignUp">
 
 				<a href="<?php echo BASEPAGES;?>login2.php" type="submit" value="Cancel" style="background-color: var(--loginSubmitBackgroundColor);color: var(--loginSubmitColor);font-weight: 700;text-transform: uppercase;width: 100%;border-radius: var(--loginBorderRadus);padding: 1rem;margin-left: 1rem;text-align: center;cursor: pointer;">Cancel</a>
 			</div>
