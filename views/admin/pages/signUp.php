@@ -40,8 +40,8 @@ $_SESSION['current_page'] = 'login';?>
 						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#user"></use>
 					</svg><span class="hidden">Email Address</span></label>
 				<select class="form-control form__input" name="child_gender">
-					<option value="Male">Male</option>
-					<option value="Female">Female</option>
+					<option value="Male">Dadar</option>
+					<option value="Female">Kurla</option>
 				</select>
 <!--				<input id="signup_email" type="text" name="signup_email" class="form__input" placeholder="Email Address" required>-->
 			</div>
