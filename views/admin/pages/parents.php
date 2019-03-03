@@ -14,7 +14,7 @@ $maried_parents = iterator_to_array($parents->getMariedParents());
 
 ?>
 
-<h1>For Single Parent</h1>
+<h1 class="page-header">For Single Parent</h1>
 
 
 <table class="table">
@@ -44,19 +44,19 @@ for($i = 0 ; $i < count($single_parents) ; $i++) {
         <td>
             <form action="">
                 <input type="text" value="<?php echo $single_parents[$i]['parent_id']?>" hidden name="child_id">
-                <input type="submit" value="View" name="view_parent">
+                <button type="submit" class="btn btn-sm btn-info" name="view_parent">View</button>
             </form>
         </td>
         <td>
             <form action="">
                 <input type="text" value="<?php echo $single_parents[$i]['parent_id']?>" hidden name="child_id">
-                <input type="submit" value="Approve" name="approve_parent">
+                <button type="submit" class="btn btn-sm btn-success" name="approve_parent">Approve</button>
             </form>
         </td>
         <td>
             <form action="">
                 <input type="text" value="<?php echo $single_parents[$i]['parent_id']?>" hidden name="child_id">
-                <input type="submit" value="Reject" name="reject_parent">
+                <button type="submit" class="btn btn-sm btn-danger" name="reject_parent">Approve</button>
             </form>
         </td>
     </tr>
@@ -65,7 +65,7 @@ for($i = 0 ; $i < count($single_parents) ; $i++) {
 </table>
 
 
-<h1>For Married Parent</h1>
+<h1 class="page-header">For Married Parent</h1>
 <table class="table">
   <thead class="thead-dark">
     <tr>
@@ -96,19 +96,19 @@ for($i = 0 ; $i < count($single_parents) ; $i++) {
           <td>
               <form action="">
                   <input type="text" value="<?php echo $single_parents[$i]['parent_id']?>" hidden name="child_id">
-                  <input type="submit" value="View" name="view_parent">
+                  <button type="submit" class="btn btn-sm btn-info" name="view_parent">View</button>
               </form>
           </td>
           <td>
               <form action="">
                   <input type="text" value="<?php echo $single_parents[$i]['parent_id']?>" hidden name="child_id">
-                  <input type="submit" value="Approve" name="approve_parent">
+                  <button type="submit" class="btn btn-sm btn-success" name="approve_parent">Approve</button>
               </form>
           </td>
           <td>
               <form action="">
                   <input type="text" value="<?php echo $single_parents[$i]['parent_id']?>" hidden name="child_id">
-                  <input type="submit" value="Reject" name="reject_parent">
+                  <button type="submit" class="btn btn-sm btn-danger" name="reject_parent">Approve</button>
               </form>
           </td>
       </tr>
