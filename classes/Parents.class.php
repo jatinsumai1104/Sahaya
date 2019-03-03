@@ -96,7 +96,7 @@ class Parents
 
 
     public function getSingleParents(){
-        $rs = $this->collection->find(["is_single_parent"=>"0"]);
+        $rs = $this->collection->find(["is_single_parent"=>"0","is_verified"=>false]);
 
         if($rs == null){
             return false;
@@ -107,7 +107,7 @@ class Parents
     }
 
     public function getMariedParents(){
-        $rs = $this->collection->find(["is_single_parent"=>"1"]);
+        $rs = $this->collection->find(["is_single_parent"=>"1","is_verified"=>false]);
 
         if($rs == null){
             return false;
@@ -115,5 +115,53 @@ class Parents
 
         return $rs;
     }
+
+    public function changeStatusApprove($parent_id){
+        $newdata=array('$set'=>array("is_verified"=>true));
+        $this->collection->updateOne(array("parent_id" => $parent_id), $newdata);
+    }
+
+
+    public function changeStatusReject($parent_id){
+        $newdata=array('$set'=>array("is_verified"=>null));
+        $this->collection->updateOne(array("parent_id" => $parent_id), $newdata);
+    }
+
+
+
+    public function sendApprovalMail($email){
+//		$ciphertext_email= $this->encryption->encrypt($email);
+        require_once('Mailer.php');
+        $mailer = new Mailer();
+        $user_email = "$email";
+        $subject = "Sahaya Approval Confirmation";
+
+
+        $body = "
+		<div style='font-family:Roboto; font-size:16px; max-width: 600px; line-height: 21px;'>
+			<h4>Hello,</h4>
+			<h3>Your Approval for adoption is approved</h3>
+			<br>
+			<br>
+			<h3>Thank you for Applying.</h3>
+			<br>
+			<br>
+			<h4>Sincerely,</h4>
+			<h5>The Sahaya Foundation.</h5>
+			</div>";
+
+        $boolean=$mailer->send_mail($user_email, $body, $subject);
+        if($boolean){
+            $_SESSION['status']="SUCCESSMAIL";
+            header("Location: ../pages/parents.php");
+        }
+        else{
+            $_SESSION['status']="FAILUREMAIL";
+            header("Location: ../pages/parents.php");
+        }
+
+
+    }
+
 
 }

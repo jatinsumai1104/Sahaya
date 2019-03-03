@@ -35,6 +35,35 @@ if(isset($_POST['register_parent'])){
 			header("Location: {$baseurl}parents.php");
 		}
 	}
+}else{
+    if(isset($_POST['approve_parent'])){
+        extract($_POST);
+        $parents = new Parents($_SESSION['branch']);
+
+//        var_dump($_POST);
+
+        $parents->changeStatusApprove($parent_id);
+
+        $array = iterator_to_array($parents->getParent($parent_id));
+
+
+        if($array[0]['is_single_parent'] == "0"){
+            $parents->sendApprovalMail($array[0]['perspective_parent_1']['email']);
+        }else{
+            $parents->sendApprovalMail($array[0]['perspective_parent_1']['email']);
+            $parents->sendApprovalMail($array[0]['perspective_parent_2']['email']);
+        }
+    }else{
+        if(isset($_POST['reject_parent'])){
+
+            $parents = new Parents($_SESSION['db_name']);
+
+            extract($_POST);
+
+            $parents->changeStatusReject($parent_id);
+
+        }
+    }
 }
 
 ?>

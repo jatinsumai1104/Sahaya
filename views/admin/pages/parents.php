@@ -42,21 +42,21 @@ for($i = 0 ; $i < count($single_parents) ; $i++) {
         <td><?php  echo $single_parents[$i]['perspective_parent_1']['parent_age'];?></td>
         <td><?php  echo $single_parents[$i]['perspective_parent_1']['gender'];?></td>
         <td>
-            <form action="">
-                <input type="text" value="<?php echo $single_parents[$i]['parent_id']?>" hidden name="child_id">
+            <form action="../helper/parent_routing.php" method="post">
+                <input type="text" value="<?php echo $single_parents[$i]['parent_id']?>" hidden name="parent_id">
                 <button type="submit" class="btn btn-sm btn-info" name="view_parent">View</button>
             </form>
         </td>
         <td>
-            <form action="">
-                <input type="text" value="<?php echo $single_parents[$i]['parent_id']?>" hidden name="child_id">
+            <form action="../helper/parent_routing.php" method="post">
+                <input type="text" value="<?php echo $single_parents[$i]['parent_id']?>" hidden name="parent_id">
                 <button type="submit" class="btn btn-sm btn-success" name="approve_parent">Approve</button>
             </form>
         </td>
         <td>
-            <form action="">
-                <input type="text" value="<?php echo $single_parents[$i]['parent_id']?>" hidden name="child_id">
-                <button type="submit" class="btn btn-sm btn-danger" name="reject_parent">Approve</button>
+            <form action="../helper/parent_routing.php" method="post">
+                <input type="text" value="<?php echo $single_parents[$i]['parent_id']?>" hidden name="parent_id">
+                <button type="submit" class="btn btn-sm btn-danger" name="reject_parent">Reject</button>
             </form>
         </td>
     </tr>
@@ -95,20 +95,20 @@ for($i = 0 ; $i < count($single_parents) ; $i++) {
           <td><?php  echo $maried_parents[$i]['perspective_parent_2']['gender'];?></td>
           <td>
               <form action="">
-                  <input type="text" value="<?php echo $single_parents[$i]['parent_id']?>" hidden name="child_id">
+                  <input type="text" value="<?php echo $maried_parents[$i]['parent_id']?>" hidden name="parent_id">
                   <button type="submit" class="btn btn-sm btn-info" name="view_parent">View</button>
               </form>
           </td>
           <td>
-              <form action="">
-                  <input type="text" value="<?php echo $single_parents[$i]['parent_id']?>" hidden name="child_id">
+              <form action="../helper/parent_routing.php" method="post">
+                  <input type="text" value="<?php echo $maried_parents[$i]['parent_id']?>" hidden name="parent_id">
                   <button type="submit" class="btn btn-sm btn-success" name="approve_parent">Approve</button>
               </form>
           </td>
           <td>
-              <form action="">
-                  <input type="text" value="<?php echo $single_parents[$i]['parent_id']?>" hidden name="child_id">
-                  <button type="submit" class="btn btn-sm btn-danger" name="reject_parent">Approve</button>
+              <form action="../helper/parent_routing.php" method="post">
+                  <input type="text" value="<?php echo $maried_parents[$i]['parent_id']?>" hidden name="parent_id">
+                  <button type="submit" class="btn btn-sm btn-danger" name="reject_parent">Reject</button>
               </form>
           </td>
       </tr>
