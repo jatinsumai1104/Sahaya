@@ -42,8 +42,8 @@ class Employee
         $emp_id = $branch . "_EMP_".(getEmpCount()+1);
 
         $this->collection->insertOne(["emp_id"=>$emp_id,"emp_email"=>$emp_email,"emp_password"=>$emp_password,"branch_id"=>$branch]);
-
-
+		
+		$this->sendRegistrationMail($emp_email);
     }
 
     public function insertEmployee($emp_id,$formdata){
