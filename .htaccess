@@ -1,0 +1,3 @@
+RewriteEngine On
+RewriteRule ^admin/login$ views/admin/pages/login2.php
+RewriteRule ^admin/childrens$ views/admin/pages/childrens.php
