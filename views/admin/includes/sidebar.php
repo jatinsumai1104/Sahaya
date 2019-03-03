@@ -26,8 +26,8 @@
 			</a>
 			<ul class="children collapse" id="sub-item-1">
 				<li class="<?php if($_SESSION['current_page'] == "viewChilds") { echo "active" ; }else{ echo "" ; } ?>">
-					<a href="<?php echo BASEURL; ?>getchilds"><em class="fa fa-child">&nbsp;</em> Show Children</a></li>
-				<li class="<?php if($_SESSION['current_page'] == "submitChild") { echo "active" ; }else{ echo "" ; } ?>"><a href="<?php echo BASEURL; ?>submitchild"><em class="fa fa-handshake-o">&nbsp;</em> Register Child</a></li>
+					<a href="<?php echo BASEPAGES; ?>childrens.php"><em class="fa fa-child">&nbsp;</em> Show Children</a></li>
+				<li class="<?php if($_SESSION['current_page'] == "submitChild") { echo "active" ; }else{ echo "" ; } ?>"><a href="<?php echo BASEPAGES; ?>submitChild.php"><em class="fa fa-handshake-o">&nbsp;</em> Register Child</a></li>
 			</ul>
 		</li>
 		<?php if($_SESSION['emp_role'] <= 2){?>
@@ -36,8 +36,8 @@
 				Parent <span data-toggle="collapse" href="#sub-item-2" class="icon pull-right"><em class="fa fa-plus"></em></span>
 			</a>
 			<ul class="children collapse" id="sub-item-2">
-				<li class="<?php if($_SESSION['current_page'] == "registerparent") { echo "active" ; }else{ echo "" ; } ?>"><a href="<?php echo BASEURL; ?>registerparent"><em class="fa fa-dashboard">&nbsp;</em> Register Parent</a></li>
-				<li class="<?php if($_SESSION['current_page'] == "dashboard") { echo "active" ; }else{ echo "" ; } ?>"><a href="<?php echo BASEURL; ?>dashboard"><img src="<?php echo BASEPLUGINS;?>images/page-logos/accept.png" alt="" width="15px" height="15px"> View All Parent Request</a></li>
+				<li class="<?php if($_SESSION['current_page'] == "registerparent") { echo "active" ; }else{ echo "" ; } ?>"><a href="<?php echo BASEPAGES; ?>registerParent.php"><em class="fa fa-dashboard">&nbsp;</em> Register Parent</a></li>
+				<li class="<?php if($_SESSION['current_page'] == "dashboard") { echo "active" ; }else{ echo "" ; } ?>"><a href="<?php echo BASEPAGES; ?>parents.php"><img src="<?php echo BASEPLUGINS;?>images/page-logos/accept.png" alt="" width="15px" height="15px"> View All Parent Request</a></li>
 			</ul>
 		</li>
 		<?php } ?>
