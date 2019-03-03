@@ -1,7 +1,9 @@
 <?php 
 
 require_once('constants.php');
-//require_once('../../classes/Children.class.php');
-//$children = new Children();
-//echo $children;
+require_once('../../../classes/Children.class.php');
+require_once('../../../classes/Parents.class.php');
+require_once('../../../classes/Employee.class.php');
+
+
 ?>

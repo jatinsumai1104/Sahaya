@@ -60,7 +60,7 @@ class Employee
 
     public function updateEmployee($emp_id,$formdata){
         extract($formdata);
-        $newdata=array('$set'=>array("emp_name"=>$emp_name,"emp_dob"=>$emp_dob,"emp_gender"=>$emp_dob,"emp_role"=>$emp_role,"emp_address"=>$emp_address,"emp_uid"=>$emp_uid,"emp_contact"=>$emp_contact,"emp_email"=>$emp_email,"emp_image"=>["image"=>$emp_image,"image_extension"=>$image_extension],"emp_document_details"=>["emp_documents"=>$emp_documents,"document_extension"=>$doc_extension]]);
+        $newdata=array('$set'=>array("emp_name"=>$emp_name,"emp_dob"=>$emp_dob,"emp_gender"=>$emp_dob,"emp_role"=>$emp_role,"emp_address"=>$emp_address,"emp_uid"=>$emp_uid,"emp_contact"=>$emp_contact,"emp_email"=>$emp_email,"emp_image"=>["image"=>$emp_image,"image_extension"=>$image_extension],"emp_document_details"=>["emp_documents"=>$emp_documents,"document_extension"=>$doc_extension]));
         $this->collection->updateOne(array("emp_id" => $emp_id), $newdata);
     }
 

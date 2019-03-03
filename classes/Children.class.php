@@ -102,5 +102,4 @@ class Children
     //function to retrieve children for a particular age group.
 
 }
-echo "hi";
 ?>
