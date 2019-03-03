@@ -6,7 +6,7 @@
 		</div>
 		<div class="profile-usertitle">
 			<div class="profile-usertitle-name">
-				<?php echo $_SESSION['employee_username']?>
+				<?php echo $_SESSION['emp_name']?>
 			</div>
 			<div class="profile-usertitle-status"><span class="indicator label-success"></span>Online</div>
 		</div>
@@ -30,7 +30,7 @@
 				<li class="<?php if($_SESSION['current_page'] == "submitChild") { echo "active" ; }else{ echo "" ; } ?>"><a href="<?php echo BASEURL; ?>submitchild"><em class="fa fa-handshake-o">&nbsp;</em> Register Child</a></li>
 			</ul>
 		</li>
-		<?php if($_SESSION['employee_role'] <= 2){?>
+		<?php if($_SESSION['emp_role'] <= 2){?>
 
 		<li class="parent "><a data-toggle="collapse" href="#sub-item-2">
 				Parent <span data-toggle="collapse" href="#sub-item-2" class="icon pull-right"><em class="fa fa-plus"></em></span>

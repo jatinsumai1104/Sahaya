@@ -1,11 +1,16 @@
 <?php 
+ob_start();
+session_start();
 require_once('../includes/header-bp.php');
 require_once('../includes/navigation.php');
 require_once('../includes/sidebar.php');
 require_once('../includes/breadcrumbs.php');
 ?>
 <div class="row">
-	<?php if($_SESSION['employee_role'] == 1){?>
+	<?php 
+	
+	print_r($_SESSION);
+	if($_SESSION['employee_role'] == 1){?>
 	<div class="panel panel-container">
 			<div class="row">
 				<div class="col-xs-6 col-md-3 col-lg-3 no-padding">
