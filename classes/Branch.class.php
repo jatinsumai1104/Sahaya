@@ -27,7 +27,7 @@ class Branch
         extract($formdata);
         $branch_id="DADAR";
 
-        $this->collection->insertOne(["branch_name"=>$branch_name,"branch_id"=>$branch_id,"branch_location"=>$branch_location,"branch_contact"=>$branch_contact,"branch_email"=>$branch_email,"branch_children_count"=>$branch_children_count,"branch_adopted_children_count"=>$branch_adopted_children_count;]);
+        $this->collection->insertOne(["branch_name"=>$branch_name,"branch_id"=>$branch_id,"branch_location"=>$branch_location,"branch_contact"=>$branch_contact,"branch_email"=>$branch_email,"branch_children_count"=>$branch_children_count,"branch_adopted_children_count"=>$branch_adopted_children_count]);
     }
 
     public function getBranchChildrenCount($branch_id){

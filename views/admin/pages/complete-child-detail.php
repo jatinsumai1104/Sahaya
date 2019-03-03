@@ -13,7 +13,7 @@ $array = iterator_to_array($children->getChild($_POST['child_id']));
 
 
 file_put_contents("../../../assets/images/uploads/".$array[0]['child_id'].".".$array[0]['child_image']["image_extension"],$array[0]['child_image']['image']);
-file_put_contents("../../../assets/images/uploads/".$array[0]['child_id'].".".$array[0]['personal_documents']["image_extension"],$array[0]['personal_documents']['personal_documents']);
+file_put_contents("../../../assets/images/uploads/".$array[0]['child_id'].".".$array[0]['personal_documents']["document_extension"],$array[0]['personal_documents']['personal_documents']);
 ?>
 <div class="row">
 	<div class="panel panel-info">
@@ -67,7 +67,7 @@ file_put_contents("../../../assets/images/uploads/".$array[0]['child_id'].".".$a
 							<tr>
 								<td>Disability</td>
 								<td>
-									<?php echo $array[0]['disabiliy'];?>
+									<?php echo $array[0]['disability'];?>
 								</td>
 							</tr>
 							<tr>
@@ -92,7 +92,7 @@ file_put_contents("../../../assets/images/uploads/".$array[0]['child_id'].".".$a
 		<div class="panel-footer">
 			<a data-original-title="Broadcast Message" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary"><i class="glyphicon glyphicon-envelope"></i></a>
 			<span class="pull-right">
-				<form action="" method="post">
+				<form action="<?php echo BASEURL."views/admin/pages/submitChild.php";?>" method="post">
 					<input name="child_id" value="<?php echo $array[0]['child_id'];?>" hidden>
 					<button type="submit" class="btn btn-primary" name="updateDetails">Update Details</button>
 				</form>
