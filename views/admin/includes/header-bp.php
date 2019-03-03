@@ -1,4 +1,7 @@
-<?php require_once('../../includes/bootstrap.php');?>
+<?php
+ob_start();
+session_start();
+require_once('../../includes/bootstrap.php');?>
 <!DOCTYPE html>
 <html>
 
