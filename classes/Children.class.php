@@ -17,8 +17,7 @@ class Children
     private $birthmark;
     private $disability;
     private $date_of_admission;
-    private $s
-ource_of_admission;
+    private $source_of_admission;
     private $child_image;
     private $current_standard;
     private $personal_documents;
@@ -103,7 +102,5 @@ ource_of_admission;
 
         return $rs;
     }
-
     //function to retrieve children for a particular age group.
-
 }
