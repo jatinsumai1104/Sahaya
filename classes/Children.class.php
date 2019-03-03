@@ -25,9 +25,9 @@ class Children
     private $collection;
     private $collectionName = "Children";
 
-    public function __construct()
+    public function __construct($db_name)
     {
-        $this->collection = (new Database("testing"))->getRequiredCollection($this->collectionName);
+        $this->collection = (new Database($db_name))->getRequiredCollection($this->collectionName);
     }
 
 
@@ -36,7 +36,7 @@ class Children
 
         $child_id = "DADAR_CHD_" .($this->getChildrenCount()+1);
 
-        $this->collection->insertOne(["child_id"=>$child_id,"child_name"=>$child_name,"gender"=>$gender,"dob"=>$dob,"birthmark"=>$birthmark,"disabiliy"=>$disability,"date_of_admission"=>$date_of_admission,"source_of_admission"=>$source_of_admission,"child_image"=>["image"=>$child_image,"image_extension"=>$image_extension],"qualification_details"=>["current_standard"=>$current_standard],"personal_documents"=>["personal_documents"=>$personal_documents,"image_extension"=>$image_extension_doc],"is_adopted"=>$this->is_adopted]);
+        $this->collection->insertOne(["child_id"=>$child_id,"child_name"=>$child_name,"gender"=>$gender,"dob"=>$dob,"birthmark"=>$birthmark,"disabiliy"=>$disability,"date_of_admission"=>$date_of_admission,"source_of_admission"=>$source_of_admission,"child_image"=>["image"=>$child_image,"image_extension"=>$image_extension],"qualification_details"=>["current_standard"=>$current_standard],"personal_documents"=>["personal_documents"=>$personal_documents,"document_extension"=>$document_extension],"is_adopted"=>$this->is_adopted]);
     }
 
 

@@ -1,4 +1,6 @@
-<?php 
+<?php
+session_start();
+require_once ("../../includes/bootstrap.php");
 require_once('../includes/header-bp.php');
 require_once('../includes/navigation.php');
 require_once('../includes/sidebar.php');
@@ -33,36 +35,40 @@ require_once('../includes/breadcrumbs.php');
 </style>
 <div class="row">
 
-	<?php for($i = 0; $i < count($allChild); $i++){
-		$year = explode("-", $allChild[$i]['date_of_admission'])[0];
-		$count = 0;
-		$keys =array_keys((array)$allChild[$i]['child_image']);
-		foreach($keys as $key){
-			file_put_contents("assets/images/uploads/".$allChild[$i]['child_id']."_{$count}.".$allChild[$i]['child_image']->{$key}->image_ext, $allChild[$i]['child_image']->{$key}->image);
-			$count++;
-		}
-//		file_put_contents("assets/images/uploads/".$allChild[$i]['child_id']."_0.".$allChild[$i]['child_image']->{$year}->image_ext, $allChild[$i]['child_image']->{$year}->image);
-	?>
-	<form action="<?php echo BASEURL;?>childcompletedetails" method="post">
-		<div class="col-md-3 col-sm-6 col-xs-6">
-			<div class="card">
-				<img src="<?php echo BASEPLUGINS."images/uploads/".$allChild[$i]['child_id']."_0.".$allChild[$i]['child_image']->{2019}->image_ext?>" class="img-responsive" alt="<?php echo $allChild[$i]['child_first_name']." ".$allChild[$i]['child_last_name']?>" style="width:100%;height:161px;">
-				<h1>
-					<?php echo $allChild[$i]['child_first_name'];?>
-				</h1>
-				<h1>
-					<?php echo $allChild[$i]['child_last_name'];?>
-				</h1>
-				<p>Age:
-					<?php echo $allChild[$i]['child_detail']->age;?>
-				</p>
-										<input name="childId" value="<?php echo $allChild[$i]['child_id'];?>" hidden>
-				<p><button type="submit" name="viewChildDetails">View</button></p>
-			</div>
-		</div>
-	</form>
-	<?php } ?>
 
+    <?php
+
+        $children = new Children("testing");
+
+        $rs = $children->getChildren();
+
+        $array = iterator_to_array($rs);
+
+//        var_dump($array);
+    ?>
+<? for($i=0;$i<$children->getChildrenCount();$i++) {
+        file_put_contents("../../../assets/images/uploads/".$array[$i]['child_id'].".".$array[$i]['child_image']["image_extension"],$array[$i]['child_image']['image']);
+    ?>
+    <form action="complete-child-detail.php" method="post">
+        <div class="col-md-3 col-sm-6 col-xs-6">
+            <div class="card">
+                <img src="../../../assets/images/uploads/<?php echo $array[$i]['child_id'].".".$array[$i]['child_image']["image_extension"] ?>" class="img-responsive" alt="">
+                <h1>
+                    <?php echo $array[$i]["child_name"] ?>
+                </h1>
+                <p>Age:
+                    <?php echo $children->calculateChildAge($array[$i]["child_id"]) ?>
+                </p>
+                <input name="child_id" value="<?php echo $array[$i]['child_id']?>" hidden>
+                <p>
+                    <button type="submit" name="viewChildDetails">View</button>
+                </p>
+            </div>
+        </div>
+    </form>
+    <?php
+}
+    ?>
 </div>
 <?php 
 require_once('../includes/footer-bp.php');

@@ -6,6 +6,7 @@
  * Time: 04:44 PM
  */
 require_once ("Database.class.php");
+
 class Branch
 {
     private $collection;
@@ -18,16 +19,15 @@ class Branch
     private $branch_children_count=0;
     private $branch_adopted_children_count=0;
 
-    public function __construct(){
-        $this->collection = (new Database("testing"))->getRequiredCollection($this->collectionName);
-        $this->childrenCollection = new Children();
+    public function __construct($db_name){
+        $this->collection = (new Database($db_name))->getRequiredCollection($this->collectionName);
     }
 
     public function insertBranch($formdata){
         extract($formdata);
         $branch_id="DADAR";
 
-        $this->collection->insertOne(["branch_name"=>$branch_name,"branch_id"=>$branch_id,"branch_location"=>$branch_location,"branch_contact"=>$branch_contact,"branch_email"=>$branch_email,"branch_children_count"=>$branch_children_count,"branch_adopted_children_count"=>$branch_adopted_children_count;]);
+        $this->collection->insertOne(["branch_name"=>$branch_name,"branch_id"=>$branch_id,"branch_location"=>$branch_location,"branch_contact"=>$branch_contact,"branch_email"=>$branch_email,"branch_children_count"=>$branch_children_count,"branch_adopted_children_count"=>$branch_adopted_children_count]);
     }
 
     public function getBranchChildrenCount($branch_id){
