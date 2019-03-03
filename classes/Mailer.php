@@ -2,8 +2,8 @@
 class Mailer{
     public function  __construct()
     {
-        require("phpmailer/src/PHPMailer.php");
-        require("phpmailer/src/SMTP.php");
+        require("vendor/phpmailer/src/PHPMailer.php");
+        require("vendor/phpmailer/src/SMTP.php");
 
         $this->mail = new PHPMailer\PHPMailer\PHPMailer();
         $this->mail->IsSMTP();                    // enable SMTP
@@ -19,11 +19,10 @@ class Mailer{
 
     public  function send_mail($user_mail,$body,$subject){
 		// a new mail id is needed
-		$sender_username = "Nikhil Ghind";
-		$password = "nehaghind";
-        $this->mail->Username = "ghind20@gmail.com";
-        $this->mail->Password = "{$password}";
-        $this->mail->SetFrom("ghind20@gmail.com", "Sahaya");
+		echo "hello";
+        $this->mail->Username = "handlesquizlikeaboss@gmail.com";
+        $this->mail->Password = "quizhandlers123";
+        $this->mail->SetFrom("handlesquizlikeaboss@gmail.com", "Sahaya");
         $this->mail->Subject = $subject;
         $this->mail->Body = $body;
         $this->mail->AddAddress("$user_mail");
