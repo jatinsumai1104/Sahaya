@@ -1,4 +1,6 @@
-<?php $_SESSION['current_page'] = 'login';?>
+<?php 
+require_once('../../includes/bootstrap.php');
+$_SESSION['current_page'] = 'login';?>
 <!DOCTYPE html>
 <html>
 
@@ -34,10 +36,14 @@
 			</div>
 
 			<div class="form__field">
-				<label for="signup_username"><svg class="icon">
+				<label for="signup_email"><svg class="icon">
 						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#user"></use>
-					</svg><span class="hidden">Username</span></label>
-				<input id="signup_username" type="text" name="signup_username" class="form__input" placeholder="Username" required>
+					</svg><span class="hidden">Email Address</span></label>
+				<select class="form-control form__input" name="child_gender">
+					<option value="Male">Dadar</option>
+					<option value="Female">Kurla</option>
+				</select>
+<!--				<input id="signup_email" type="text" name="signup_email" class="form__input" placeholder="Email Address" required>-->
 			</div>
 
 			<div class="form__field">
@@ -59,8 +65,8 @@
 
 			<div class="form__field">
 				<input type="submit" value="Sign In" style="background-color: var(--loginSubmitBackgroundColor);color: var(--loginSubmitColor);font-weight: 700;text-transform: uppercase;width: 100%;border-radius: var(--loginBorderRadus);padding: 1rem;margin-right: 1rem;text-align: center;cursor: pointer;">
-				
-				<a href="<?php echo BASEURL; ?>logout" type="submit" value="Cancel" style="background-color: var(--loginSubmitBackgroundColor);color: var(--loginSubmitColor);font-weight: 700;text-transform: uppercase;width: 100%;border-radius: var(--loginBorderRadus);padding: 1rem;margin-left: 1rem;text-align: center;cursor: pointer;">Cancel</a>
+
+				<a href="<?php echo BASEPAGES;?>login2.php" type="submit" value="Cancel" style="background-color: var(--loginSubmitBackgroundColor);color: var(--loginSubmitColor);font-weight: 700;text-transform: uppercase;width: 100%;border-radius: var(--loginBorderRadus);padding: 1rem;margin-left: 1rem;text-align: center;cursor: pointer;">Cancel</a>
 			</div>
 		</form>
 

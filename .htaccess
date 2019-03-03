@@ -1,3 +1,8 @@
 RewriteEngine On
-RewriteRule ^admin/login$ views/admin/pages/login2.php
-RewriteRule ^admin/childrens$ views/admin/pages/childrens.php
+#RewriteRule ^admin/login$ views/admin/pages/login2.php
+#RewriteRule ^admin/sign_up_page$ views/admin/pages/signUp.php
+#RewriteRule ^admin/childrens$ views/admin/pages/childrens.php
+#RewriteRule ^admin/submit_child$ views/admin/pages/submitChild.php
+#RewriteRule ^admin/completeSignUp$ views/admin/pages/registration-page.php
+#RewriteRule ^admin/dashboard$ views/admin/pages/dashboard.php
+#RewriteRule ^admin/registerParent$ views/admin/pages/registerParent.php

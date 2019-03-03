@@ -22,10 +22,6 @@ class Children
     private $current_standard;
     private $personal_documents;
     private $is_adopted = "NO";
-
-
-
-
     private $collection;
     private $collectionName = "Children";
 
@@ -103,4 +99,6 @@ class Children
         return $rs;
     }
     //function to retrieve children for a particular age group.
+
 }
+

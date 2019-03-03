@@ -57,7 +57,7 @@ $_SESSION['current_page'] = 'login';
 
 		</form>
 
-		<p class="text--center">Not a member? <a href="<?php echo BASEURL;?>sign_up_page">Sign up now</a> <svg class="icon">
+		<p class="text--center">Not a member? <a href="<?php echo BASEPAGES;?>signUp.php">Sign up now</a> <svg class="icon">
 				<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/images/icons.svg#arrow-right"></use>
 			</svg></p>
 
