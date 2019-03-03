@@ -77,9 +77,9 @@ file_put_contents("../../../assets/images/uploads/".$array[0]['child_id'].".".$a
 									Adoption
 								</td>
 								<td>
-									<?php  if($array[0]['is_adopted']=="NO"){echo "ADOPTED";}
+									<?php  if($array[0]['is_adopted']=="NO"){echo "NOT ADOPTED";}
 									else{
-									    echo "NOT ADOPTED";
+									    echo "ADOPTED";
                                     }?>
 								</td>
 							</tr>
