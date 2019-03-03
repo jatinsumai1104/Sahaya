@@ -96,18 +96,18 @@ class Parents
 
 
     public function getSingleParents(){
-        $rs = $this->collection->find(["is_single_parent"=>0]);
+        $rs = $this->collection->find(["is_single_parent"=>"0"]);
 
         if($rs == null){
             return false;
         }
-
+//		var_dump($rs);
         return $rs;
 
     }
 
     public function getMariedParents(){
-        $rs = $this->collection->find(["is_single_parent"=>1]);
+        $rs = $this->collection->find(["is_single_parent"=>"1"]);
 
         if($rs == null){
             return false;

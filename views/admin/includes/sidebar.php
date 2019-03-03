@@ -19,7 +19,7 @@
 		</div>
 	</form>
 	<ul class="nav menu">
-		<li class="<?php if($_SESSION['current_page'] == "dashboard") { echo "active" ; }else{ echo "" ; } ?>"><a href="<?php echo BASEURL; ?>dashboard"><em class="fa fa-dashboard">&nbsp;</em> Updates and Details</a></li>
+		<li class="<?php if($_SESSION['current_page'] == "dashboard") { echo "active" ; }else{ echo "" ; } ?>"><a href="<?php echo BASEPAGES; ?>dashboard.php"><em class="fa fa-dashboard">&nbsp;</em> Updates and Details</a></li>
 
 		<li class="parent "><a data-toggle="collapse" href="#sub-item-1">
 				Children <span data-toggle="collapse" href="#sub-item-1" class="icon pull-right"><em class="fa fa-plus"></em></span>
