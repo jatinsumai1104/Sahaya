@@ -22,19 +22,42 @@ class Employee
     private $emp_email;
     private $emp_image;
     private $emp_documents;
+   private $emp_password;
+   private $branch_id;
 
 
-    public function __construct()
+    public function __construct($db_name)
     {
-        $this->collection = (new Database("testing"))->getRequiredCollection($this->collectionName);
+        $this->collection = (new Database($db_name))->getRequiredCollection($this->collectionName);
     }
 
-    public function insertEmployee($formdata){
+    public function registerEmployee($array){
+        extract($array);
+
+
+        if(($this->collection->findOne(["emp_email"=>$emp_email]))>0){
+            return false;
+        }
+
+        $emp_id = $branch . "_EMP_".(getEmpCount()+1);
+
+        $this->collection->insertOne(["emp_id"=>$emp_id,"emp_email"=>$emp_email,"emp_password"=>$emp_password,"branch_id"=>$branch]);
+
+
+    }
+
+    public function insertEmployee($emp_id,$formdata){
         extract($formdata);
-        $emp_id="DADAR_EMP_".(getEmpCount()+1);
-
-        $this->collection->insertOne(["emp_id"=>$emp_id,"emp_name"=>$emp_name,"emp_dob"=>$emp_dob,"emp_gender"=>$emp_dob,"emp_role"=>$emp_role,"emp_address"=>$emp_address,"emp_uid"=>$emp_uid,"emp_contact"=>$emp_contact,"emp_email"=>$emp_email,"emp_image"=>["image"=>$emp_image,"image_extension"=>$image_extension],"emp_document_details"=>["emp_documents"=>$emp_documents,"document_extension"=>$doc_extension]]);
+        $this->updateEmployee($emp_id,$formdata);
     }
+   
+   public function checkEmployee($emp_email,$emp_password){
+      if(($this->collection->countDocuments(["emp_email"=>$emp_email,"emp_password"=>$emp_password]))>1){
+         return false;
+      }
+      $rs = $this->collection->find(["emp_email"=>$emp_email,"emp_password"=>$emp_password]);
+      return $rs;
+   }
 
     public function getEmployeeCount(){
         return $this->collection->countDocuments();

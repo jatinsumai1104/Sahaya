@@ -26,6 +26,7 @@ class Parents
     private $phone_no;
     private $financial_status;
     private $emp_id;
+    private $is_verified;
 
     public function __construct()
     {
@@ -45,7 +46,7 @@ class Parents
     public function insertParents(){
         extract($array);
 
-        $this->collection->insertOne(["parent_id"=>$parent_id,"is_single_parent"=>$is_single_parent,"perspective_parent_1"=>["parent_name"=>$parent_name_1,"parent_age"=>$parent_age_1,"gender"=>$gender_1,"parent_address"=>$parent_address_1,"criminal_status"=>$criminal_status_1,"occupation"=>$occupation_1,"document_verification"=>$document_verification_1,"uid_no"=>$uid_no_1,"pan_no"=>$pan_no_1,"email"=>$email_1,"phone_no"=>$phone_no_1],"perspective_parent_2"=>["parent_name"=>$parent_name_2,"parent_age"=>$parent_age_2,"gender"=>$gender_2,"parent_address"=>$parent_address_2,"criminal_status"=>$criminal_status_2,"occupation"=>$occupation_2,"document_verification"=>$document_verification_2,"uid_no"=>$uid_no_2,"pan_no"=>$pan_no_2,"email"=>$email_2,"phone_no"=>$phone_no_2],"financial_status"=>$financial_status,"emp_id"=>$emp_id]);
+        $this->collection->insertOne(["parent_id"=>$parent_id,"is_single_parent"=>$is_single_parent,"perspective_parent_1"=>["parent_name"=>$parent_name_1,"parent_age"=>$parent_age_1,"gender"=>$gender_1,"parent_address"=>$parent_address_1,"criminal_status"=>$criminal_status_1,"occupation"=>$occupation_1,"document_verification"=>$document_verification_1,"uid_no"=>$uid_no_1,"pan_no"=>$pan_no_1,"email"=>$email_1,"phone_no"=>$phone_no_1],"perspective_parent_2"=>["parent_name"=>$parent_name_2,"parent_age"=>$parent_age_2,"gender"=>$gender_2,"parent_address"=>$parent_address_2,"criminal_status"=>$criminal_status_2,"occupation"=>$occupation_2,"document_verification"=>$document_verification_2,"uid_no"=>$uid_no_2,"pan_no"=>$pan_no_2,"email"=>$email_2,"phone_no"=>$phone_no_2],"financial_status"=>$financial_status,"emp_id"=>$emp_id,"is_verified"=>$is_verified]);
     }
 
 

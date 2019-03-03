@@ -1,4 +1,5 @@
 <?php 
+session_start();
 require_once('../../includes/bootstrap.php');
 $_SESSION['current_page'] = 'login';
 ?>
@@ -27,24 +28,31 @@ $_SESSION['current_page'] = 'login';
 
 	<div class="grid">
 
-		<form action="<?php echo BASEURL;?>login" method="POST" class="form login">
-
+		<form action="../helper/login_routing.php" method="POST" class="form login">
+            
+            <div class="form__field">
+               <select class="form-control" name="branch">
+                 <option value="" disabled>Select Your Location</option>
+                  <option value="DADAR">Dadar</option>
+			   </select>
+            </div>
+            
 			<div class="form__field">
 				<label for="employee_username"><svg class="icon">
 						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#user"></use>
-					</svg><span class="hidden">Username</span></label>
-				<input id="employee_username" type="text" name="employee_username" class="form__input" placeholder="Username" required>
+					</svg><span class="hidden">Email</span></label>
+				<input id="emp_email" type="text" name="emp_email" class="form__input" placeholder="Username" required>
 			</div>
 
 			<div class="form__field">
 				<label for="employee_password"><svg class="icon">
 						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#lock"></use>
 					</svg><span class="hidden">Password</span></label>
-				<input id="employee_password" type="password" name="employee_password" class="form__input" placeholder="Password" required>
+				<input id="emp_password" type="password" name="emp_password" class="form__input" placeholder="Password" required>
 			</div>
 
 			<div class="form__field">
-				<input type="submit" value="Log In">
+				<input type="submit" value="Log In" name="emp_login">
 			</div>
 
 		</form>
