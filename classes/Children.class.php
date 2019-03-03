@@ -25,9 +25,9 @@ class Children
     private $collection;
     private $collectionName = "Children";
 
-    public function __construct()
+    public function __construct($db_name)
     {
-        $this->collection = (new Database("testing"))->getRequiredCollection($this->collectionName);
+        $this->collection = (new Database($db_name))->getRequiredCollection($this->collectionName);
     }
 
 
