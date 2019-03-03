@@ -67,7 +67,7 @@ file_put_contents("../../../assets/images/uploads/".$array[0]['child_id'].".".$a
 							<tr>
 								<td>Disability</td>
 								<td>
-									<?php echo $array[0]['disabiliy'];?>
+									<?php echo $array[0]['disability'];?>
 								</td>
 							</tr>
 							<tr>
@@ -92,7 +92,7 @@ file_put_contents("../../../assets/images/uploads/".$array[0]['child_id'].".".$a
 		<div class="panel-footer">
 			<a data-original-title="Broadcast Message" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary"><i class="glyphicon glyphicon-envelope"></i></a>
 			<span class="pull-right">
-				<form action="" method="post">
+				<form action="<?php echo BASEURL."views/admin/pages/submitChild.php";?>" method="post">
 					<input name="child_id" value="<?php echo $array[0]['child_id'];?>" hidden>
 					<button type="submit" class="btn btn-primary" name="updateDetails">Update Details</button>
 				</form>
