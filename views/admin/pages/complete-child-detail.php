@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require_once ('../../includes/bootstrap.php');
 require_once('../includes/header-bp.php');
 require_once('../includes/navigation.php');
@@ -7,7 +7,7 @@ require_once('../includes/sidebar.php');
 require_once('../includes/breadcrumbs.php');
 //print_r($_SESSION);
 
-$children = new Children("testing");
+$children = new Children($_SESSION['branch']);
 
 $array = iterator_to_array($children->getChild($_POST['child_id']));
 
