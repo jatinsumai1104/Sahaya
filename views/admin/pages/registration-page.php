@@ -22,35 +22,56 @@
 				<div class="panel panel-default">
 					<div class="panel-heading">Final Register</div>
 					<div class="panel-body">
-						<form role="form" action="<?php echo BASEURL."complete_signup";?>" method="post" enctype="multipart/form-data">
+						<form role="form" action="<?php echo BASEURL."views/admin/helper/login_routing.php";?>" method="post" enctype="multipart/form-data">
 							<div class="col-md-6">
 
 								<div class="form-group">
-									<label>First Name</label>
-									<input class="form-control" placeholder="First Name" name="first_name">
+									<label>Full Name</label>
+									<input class="form-control" placeholder="Employee Name" name="emp_name">
 								</div>
 								<div class="form-group">
-									<label>Last Name</label>
-									<input class="form-control" placeholder="Last Name" name="last_name">
+									<label>Date Of Birth</label>
+									<input type="date" class="form-control" placeholder="Date Of Birth" name="emp_dob" required>
 								</div>
-
+								<div class="form-group">
+									<label>Gender</label>
+									<select class="form-control" name="emp_gender">
+										<option value="Male">Male</option>
+										<option value="Female">Female</option>
+									</select>
+								</div>
+								<div class="form-group">
+									<label>Contact Number</label>
+									<input class="form-control" placeholder="Enter your Contact Number.." name="emp_contact">
+								</div>
 
 
 							</div>
 							<div class="col-md-6">
-
 								<div class="form-group">
-									<label>Contact Number</label>
-									<input class="form-control" placeholder="Enter your Contact Number.." name="employee_contact">
+									<label>Addhar UID</label>
+									<input class="form-control" placeholder="Enter Aadhar UID" name="emp_uid">
+								</div>
+								<div class="form-group">
+									<label>Employee Image</label>
+									<input type="file" name="emp_image" class="form-control" required>
+								</div>
+								<div class="form-group">
+									<label>Employee All Documents <span>(Documents are used only for Verification)</span></label>
+									<input type="file" name="emp_documents" class="form-control" required>
 								</div>
 
 								<div class="form-group">
 									<label>Address: </label>
-									<textarea class="form-control" rows="3" name="employee_address"></textarea>
+									<textarea class="form-control" rows="3" name="emp_address"></textarea>
 								</div>
 
 							</div>
-							<button type="submit" class="btn btn-lg btn-info">SUBMIT</button>
+							<div class="col-md-12">
+								<input type="text" name="branch" value="<?php echo $_REQUEST['branch'];?>" hidden>
+								<input type="text" name="email" value="<?php echo $_REQUEST['email'];?>" hidden>
+								<button type="submit" class="btn btn-lg btn-info" name="completeSignUp">SUBMIT</button>
+							</div>
 						</form>
 					</div>
 				</div>
