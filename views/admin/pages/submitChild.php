@@ -5,6 +5,7 @@ require_once('../includes/sidebar.php');
 require_once('../includes/breadcrumbs.php');
 ?>
 	<!--Add Panel-->
+
 	<div class="row">
 		<div class="col-lg-12">
 			<div class="panel panel-default">
