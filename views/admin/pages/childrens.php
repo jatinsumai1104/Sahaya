@@ -1,5 +1,4 @@
 <?php
-session_start();
 require_once ("../../includes/bootstrap.php");
 require_once('../includes/header-bp.php');
 require_once('../includes/navigation.php');
@@ -37,7 +36,6 @@ require_once('../includes/breadcrumbs.php');
 
 
     <?php
-        session_start();
         $children = new Children($_SESSION['branch']);
 
         $rs = $children->getChildren();
