@@ -1,13 +1,10 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Nikhil Ghind
- * Date: 04-03-2019
- * Time: 01:38 AM
- */
-session_start();
-
 require_once ("../../includes/bootstrap.php");
+require_once('../includes/header-bp.php');
+$_SESSION['current_page'] = "All Parents";
+require_once('../includes/navigation.php');
+require_once('../includes/sidebar.php');
+require_once('../includes/breadcrumbs.php');
 
 $parents = new Parents($_SESSION['branch']);
 
@@ -35,13 +32,14 @@ $maried_parents = iterator_to_array($parents->getMariedParents());
   <tbody>
 
 <?php
+//	  var_dump($single_parents);
 for($i = 0 ; $i < count($single_parents) ; $i++) {
     ?>
 
     <tr>
         <th scope="row"><?php echo ($i+1);?></th>
         <td><?php  echo $single_parents[$i]['perspective_parent_1']['parent_name'];?></td>
-        <td><?php  echo $single_parents[$i]['perspective_parent_1']['age'];?></td>
+        <td><?php  echo $single_parents[$i]['perspective_parent_1']['parent_age'];?></td>
         <td><?php  echo $single_parents[$i]['perspective_parent_1']['gender'];?></td>
         <td>
             <form action="">
@@ -67,9 +65,9 @@ for($i = 0 ; $i < count($single_parents) ; $i++) {
 </table>
 
 
-
+<h1>For Married Parent</h1>
 <table class="table">
-  <thead class="thead-light">
+  <thead class="thead-dark">
     <tr>
       <th scope="col">#</th>
       <th scope="col">Parent 1 Name</th>
@@ -89,12 +87,12 @@ for($i = 0 ; $i < count($single_parents) ; $i++) {
       <tr>
           <th scope="row"><?php echo ($i+1);?></th>
           <td><?php  echo $maried_parents[$i]['perspective_parent_1']['parent_name'];?></td>
-          <td><?php  echo $single_parents[$i]['perspective_parent_1']['age'];?></td>
-          <td><?php  echo $single_parents[$i]['perspective_parent_1']['gender'];?></td>
+          <td><?php  echo $maried_parents[$i]['perspective_parent_1']['parent_age'];?></td>
+          <td><?php  echo $maried_parents[$i]['perspective_parent_1']['gender'];?></td>
 
           <td><?php  echo $maried_parents[$i]['perspective_parent_2']['parent_name'];?></td>
-          <td><?php  echo $single_parents[$i]['perspective_parent_2']['age'];?></td>
-          <td><?php  echo $single_parents[$i]['perspective_parent_2']['gender'];?></td>
+          <td><?php  echo $maried_parents[$i]['perspective_parent_2']['parent_age'];?></td>
+          <td><?php  echo $maried_parents[$i]['perspective_parent_2']['gender'];?></td>
           <td>
               <form action="">
                   <input type="text" value="<?php echo $single_parents[$i]['parent_id']?>" hidden name="child_id">

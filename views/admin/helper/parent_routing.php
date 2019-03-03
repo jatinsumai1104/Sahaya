@@ -16,7 +16,7 @@ if(isset($_POST['register_parent'])){
 			
 			$parents->insertParent($_POST);
 			$baseurl = BASEPAGES;
-			header('Location: {$baseurl}parents.php');
+			header("Location: {$baseurl}parents.php");
 		}else{
 			$document_blob = new MongoDB\BSON\Binary(file_get_contents($_FILES['parent_document_1']['tmp_name']), MongoDB\BSON\Binary::TYPE_GENERIC);
 			$temp = explode("/", $_FILES['parent_document_1']['type']);
@@ -32,7 +32,7 @@ if(isset($_POST['register_parent'])){
 			
 			$parents->insertParents($_POST);
 			$baseurl = BASEPAGES;
-			header('Location: {$baseurl}parents.php');
+			header("Location: {$baseurl}parents.php");
 		}
 	}
 }

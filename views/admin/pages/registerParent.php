@@ -1,9 +1,11 @@
 <?php 
 
 require_once('../includes/header-bp.php');
+$_SESSION['current_page'] = "register parent";
 require_once('../includes/navigation.php');
 require_once('../includes/sidebar.php');
 require_once('../includes/breadcrumbs.php');
+
 ?>
 <!--Add Panel-->
 <div class="row">

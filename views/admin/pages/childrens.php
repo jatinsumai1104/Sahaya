@@ -1,6 +1,7 @@
 <?php
 require_once ("../../includes/bootstrap.php");
 require_once('../includes/header-bp.php');
+$_SESSION['current_page'] = "All Childrens";
 require_once('../includes/navigation.php');
 require_once('../includes/sidebar.php');
 require_once('../includes/breadcrumbs.php');
