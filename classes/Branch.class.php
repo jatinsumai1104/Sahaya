@@ -6,13 +6,11 @@
  * Time: 04:44 PM
  */
 require_once ("Database.class.php");
-require_once ("Children.class.php");
 class Branch
 {
 //"branch_name"=>$branch_name,"branch_id"=>$branch_id,"branch_location"=>$branch_location,"branch_contact"=>$branch_contact,"branch_email"=>$branch_email,"branch_children_count"=>$branch_children_count,"branch_adopted_children_count"=>$branch_adopted_children_count;
 
     private $collection;
-    private $childrenCollection;
     private $collectionName = "Branch";
     private $branch_name;
     private $branch_id;
