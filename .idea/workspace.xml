@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="be6000e1-570e-4fd7-939c-3f4794fce8d3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/Parents.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Parents.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/admin/pages/complete-child-detail.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/pages/complete-child-detail.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -76,13 +76,13 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="htaccess" value="1" />
-          <entry key="php" value="3969" />
+          <entry key="php" value="4011" />
           <entry key="txt" value="186" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PHP" value="3969" />
+          <entry key="PHP" value="4011" />
           <entry key="PLAIN_TEXT" value="186" />
           <entry key="htaccess" value="1" />
         </counts>
@@ -100,20 +100,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/classes/Parents.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
+            <state>
               <caret line="14" column="38" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/admin/pages/complete-child-detail.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="45" selection-start-line="9" selection-start-column="45" selection-end-line="9" selection-end-column="45" />
+            <state relative-caret-position="238">
+              <caret line="74" column="198" selection-start-line="74" selection-start-column="198" selection-end-line="74" selection-end-column="198" />
             </state>
           </provider>
         </entry>
@@ -199,10 +199,10 @@
         <option value="$PROJECT_DIR$/classes/Branch.class.php" />
         <option value="$PROJECT_DIR$/test.php" />
         <option value="$PROJECT_DIR$/views/admin/pages/childrens.php" />
-        <option value="$PROJECT_DIR$/views/admin/pages/complete-child-detail.php" />
         <option value="$PROJECT_DIR$/views/admin/pages/parents.php" />
         <option value="$PROJECT_DIR$/views/admin/helper/registerChild_routing.php" />
         <option value="$PROJECT_DIR$/classes/Parents.class.php" />
+        <option value="$PROJECT_DIR$/views/admin/pages/complete-child-detail.php" />
       </list>
     </option>
   </component>
@@ -384,12 +384,12 @@
       <workItem from="1551524508396" duration="170000" />
       <workItem from="1551526287857" duration="14395000" />
       <workItem from="1551607818500" duration="3058000" />
-      <workItem from="1551612658043" duration="20122000" />
+      <workItem from="1551612658043" duration="20492000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39010000" />
+    <option name="totallyTimeSpent" value="39380000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -496,13 +496,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/admin/pages/complete-child-detail.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="45" selection-start-line="9" selection-start-column="45" selection-end-line="9" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/admin/pages/login.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -563,8 +556,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/classes/Parents.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
+        <state>
           <caret line="14" column="38" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/admin/pages/complete-child-detail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="74" column="198" selection-start-line="74" selection-start-column="198" selection-end-line="74" selection-end-column="198" />
         </state>
       </provider>
     </entry>

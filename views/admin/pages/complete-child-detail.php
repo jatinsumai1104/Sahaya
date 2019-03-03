@@ -13,7 +13,7 @@ $array = iterator_to_array($children->getChild($_POST['child_id']));
 
 
 file_put_contents("../../../assets/images/uploads/".$array[0]['child_id'].".".$array[0]['child_image']["image_extension"],$array[0]['child_image']['image']);
-file_put_contents("../../../assets/images/uploads/".$array[0]['child_id'].".".$array[0]['personal_documents']["image_extension"],$array[0]['personal_documents']['personal_documents']);
+file_put_contents("../../../assets/images/uploads/".$array[0]['child_id'].".".$array[0]['personal_documents']["document_extension"],$array[0]['personal_documents']['personal_documents']);
 ?>
 <div class="row">
 	<div class="panel panel-info">
@@ -72,7 +72,7 @@ file_put_contents("../../../assets/images/uploads/".$array[0]['child_id'].".".$a
 							</tr>
 							<tr>
 								<td>View Documents</td>
-								<td><a class="btn btn-md btn-info" type="button" href="../../../assets/documents/<? echo $array[0]['child_id'].'.'.$array[0]['personal_documents']['image_extension'];?>">Click Me</a> </td> </tr> <tr>
+								<td><a class="btn btn-md btn-info" type="button" href="../../../assets/documents/<? echo $array[0]['child_id'].'.'.$array[0]['personal_documents']['document_extension'];?>">Click Me</a> </td> </tr> <tr>
 								<td>
 									Adoption
 								</td>
