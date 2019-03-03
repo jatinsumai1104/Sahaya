@@ -1,1 +1,0 @@
-this file contains all the notes about dependencies used.
