@@ -22,8 +22,8 @@ class Employee
     private $emp_email;
     private $emp_image;
     private $emp_documents;
-   private $emp_password;
-   private $branch_id;
+	private $emp_password;
+	private $branch_id;
 
 
     public function __construct($db_name)
@@ -43,16 +43,15 @@ class Employee
 
 			$this->collection->insertOne(["emp_id"=>$emp_id,"emp_email"=>$emp_email,"emp_password"=>$emp_password,"branch_id"=>$branch]);
 
-			$this->sendRegistrationMail($emp_email);
+			$this->sendRegistrationMail($emp_email, $branch);
 		}
         else{
 			echo "Please Enter Same Password";
 		}
     }
 
-    public function insertEmployee($emp_id,$formdata){
-        extract($formdata);
-        $this->updateEmployee($emp_id,$formdata);
+    public function insertEmployee($emp_email,$formdata){
+        $this->updateEmployee($emp_email,$formdata);
     }
    
    public function checkEmployee($emp_email,$emp_password){
@@ -85,15 +84,14 @@ class Employee
         return $rs;
     }
 
-	public function sendRegistrationMail($email){
+	public function sendRegistrationMail($email, $branch){
 //		$ciphertext_email= $this->encryption->encrypt($email);
-		echo "hello";
 		require_once('Mailer.php');
 		$mailer = new Mailer();
 		$user_email = "$email";
 		$subject = "Sahaya Account Confirmation";
 
-		$base_url_link = "http://localhost/Sahaya/views/admin/pages/registration-page.php?XSRS=$email";
+		$base_url_link = "http://localhost/Sahaya/views/admin/pages/registration-page.php?email=$email&branch={$branch}";
 		$body = "
 		<div style='font-family:Roboto; font-size:16px; max-width: 600px; line-height: 21px;'>
 			<h4>Hello,</h4>
@@ -122,10 +120,16 @@ class Employee
 
 	}
 	
-    public function updateEmployee($emp_id,$formdata){
+    public function updateEmployee($emp_email,$formdata){
         extract($formdata);
+<<<<<<< HEAD
         $newdata=array('$set'=>array("emp_name"=>$emp_name,"emp_dob"=>$emp_dob,"emp_gender"=>$emp_dob,"emp_role"=>$emp_role,"emp_address"=>$emp_address,"emp_uid"=>$emp_uid,"emp_contact"=>$emp_contact,"emp_email"=>$emp_email,"emp_image"=>["image"=>$emp_image,"image_extension"=>$image_extension],"emp_document_details"=>["emp_documents"=>$emp_documents,"document_extension"=>$document_extension]));
         $this->collection->updateOne(array("emp_id" => $emp_id), $newdata);
+=======
+       	$emp_role = 2;
+		$newdata=array('$set'=>array("emp_name"=>$emp_name,"emp_dob"=>$emp_dob,"emp_gender"=>$emp_dob,"emp_role"=>$emp_role,"emp_address"=>$emp_address,"emp_uid"=>$emp_uid,"emp_contact"=>$emp_contact,"emp_email"=>$emp_email,"emp_image"=>["image"=>$image_blob,"image_extension"=>$image_extension],"emp_document_details"=>["emp_documents"=>$document_blob,"document_extension"=>$document_extension]));
+        $this->collection->updateOne(array("emp_email" => $emp_email), $newdata);
+>>>>>>> 9c0d8c0b060174ef2e40013649711efc852700e8
     }
 
 }

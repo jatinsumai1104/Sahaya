@@ -1,11 +1,13 @@
 <?php 
 require_once('../includes/header-bp.php');
+$_SESSION['current_page'] = "Register Children";
 require_once('../includes/navigation.php');
 require_once('../includes/sidebar.php');
 require_once('../includes/breadcrumbs.php');
 require_once('../../includes/bootstrap.php');
 ?>
 	<!--Add Panel-->
+<<<<<<< HEAD
 <?php
 if(isset($_POST['updateDetails'])){
 //echo "hello";
@@ -114,6 +116,9 @@ if(isset($_POST['updateDetails'])){
     </div><!-- /.panel-->
 <?php }else{
 ?>
+=======
+
+>>>>>>> 9c0d8c0b060174ef2e40013649711efc852700e8
 	<div class="row">
 		<div class="col-lg-12">
 			<div class="panel panel-default">

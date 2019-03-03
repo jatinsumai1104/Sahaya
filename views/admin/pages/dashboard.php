@@ -5,14 +5,17 @@ require_once('../includes/sidebar.php');
 require_once('../includes/breadcrumbs.php');
 ?>
 <div class="row">
-	<?php if($_SESSION['employee_role'] == 1){?>
+	<?php 
+	
+//	print_r($_SESSION);
+	if($_SESSION['emp_role'] == 1){?>
 	<div class="panel panel-container">
 			<div class="row">
 				<div class="col-xs-6 col-md-3 col-lg-3 no-padding">
 					<div class="panel panel-teal panel-widget border-right">
 						<div class="row no-padding"><em class="fa fa-xl fa-user-secret color-blue"></em>
-							<div class="large"><?php echo $employee_count;?></div>
-							<div class="text-muted">Employee Count</div>
+							<div class="large"><?php echo $emp_count;?></div>
+							<div class="text-muted">emp Count</div>
 						</div>
 					</div>
 				</div>
@@ -44,7 +47,7 @@ require_once('../includes/breadcrumbs.php');
 		</div>
 	<?php } ?>
 	<div class="col-md-6"></div>
-	<?php if($_SESSION['employee_role'] == 3){?>
+	<?php if($_SESSION['emp_role'] == 3){?>
 	<div class="col-md-6">
 		<div class="panel panel-default ">
 			<div class="panel-heading">
