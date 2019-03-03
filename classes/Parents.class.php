@@ -28,10 +28,10 @@ class Parents
     private $emp_id;
     private $is_verified;
 
-    public function __construct()
+    public function __construct($db_name)
     {
 
-        $this->collection = (new Database("testing"))->getRequiredCollection($this->collectionName);
+        $this->collection = (new Database($db_name))->getRequiredCollection($this->collectionName);
 
 
     }
@@ -87,6 +87,28 @@ class Parents
 
         return $age;
 
+    }
+
+
+    public function getSingleParents(){
+        $rs = $this->collection->find(["is_single_parent"=>0]);
+
+        if($rs == null){
+            return false;
+        }
+
+        return $rs;
+
+    }
+
+    public function getMariedParents(){
+        $rs = $this->collection->find(["is_single_parent"=>1]);
+
+        if($rs == null){
+            return false;
+        }
+
+        return $rs;
     }
 
 }
