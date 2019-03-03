@@ -30,13 +30,24 @@ $_SESSION['current_page'] = 'login';
 
 		<form action="../helper/login_routing.php" method="POST" class="form login">
             
+<!--
             <div class="form__field">
                <select class="form-control" name="branch">
                  <option value="" disabled>Select Your Location</option>
                   <option value="DADAR">Dadar</option>
 			   </select>
             </div>
-            
+-->
+            <div class="form__field">
+				<label><svg class="icon">
+						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#user"></use>
+					</svg><span class="hidden">Select Your Location</span></label>
+				<select class="form-control form__input" name="branch">
+					<option class="form__input" value="DADAR">Dadar</option>
+					<option class="form__input" value="KURLA">Kurla</option>
+				</select>
+<!--				<input id="signup_email" type="text" name="signup_email" class="form__input" placeholder="Email Address" required>-->
+			</div>
 			<div class="form__field">
 				<label for="employee_username"><svg class="icon">
 						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#user"></use>
