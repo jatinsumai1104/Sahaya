@@ -35,7 +35,8 @@ if(isset($_POST["register_child"])){
 
     $child_object =new Children($_SESSION['branch']);
     $child_object->insertChild($child_details_array);
-    header("Location: http://localhost/Sahaya/views/admin/pages/childrens.php");
+    $basepage= BASEPAGES;
+    header("Location: {$basepage}childrens.php");
 
 
 //    var_dump($child_details_array);
@@ -72,6 +73,7 @@ if(isset($_POST["register_child"])){
     $child_object =new Children($_SESSION['branch']);
 
     $child_object->updateChild($_POST['child_id'],$child_details_array);
-    header("Location: Location: http://localhost/Sahaya/views/admin/pages/childrens.phpchildrens.php");
+    $basepage= BASEPAGES;
+    header("Location: {$basepage}childrens.php");
 
 }
