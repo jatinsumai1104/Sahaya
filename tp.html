@@ -1,37 +1,59 @@
-<hr>
-<h2>Perspective Parent ' + (i + 1) + ' Details</h2>
-<div class="row">
-	<div class="col-md-6">
-		<div class="form-group"><label>Parent Name</label><input type="text" class="form-control" placeholder="Parent Name" name="parent_name_" ' + (i + 1) + ' required></div>
-		<div class="row">
-			<div class="col-md-6">
-				<div class="form-group"><label for="age">Age</label><br><input type="number" class="form-control" min="24" max="100" step="1" id="age" name="parent_age_" ' + (i + 1) + ' style="color: rgb(144, 144, 144);" required></div>
-			</div>
-			<div class="col-md-6">
-				<div class="form-group"><label>Gender</label><select class="form-control" name="gender_" ' + (i + 1) + ' style="margin-bottom: 27px !important;">
-						<option value="Male">Male</option>
-						<option value="Female">Female</option>
-					</select></div>
-			</div>
-		</div>
-		<div class="form-group"><label>Crimilair Status</label><select class="form-control" name="criminal_status" '+(i+1)+' style="margin-bottom: 27px !important;">
-				<option value="yes">Crimilair</option>
-				<option value="no">Non-Crimilair</option>
-			</select></div>
-		<div class="form-group"><label>Address: </label><textarea class="form-control" rows="3" name="parent_address_" ' + (i + 1) + '></textarea></div>
-		<div class="form-group"><label>Occupation</label><input type="text" class="form-control" placeholder="Occupation" name="occupation_" ' + (i + 1) + ' required></div>
-	</div>
-	<div class="col-md-6">
-		<div class="form-group"><label>Parent All Documents <span>(Documents are used only for Verification)</span></label><input type="file" name="document_verification_" ' + (i + 1) + ' class="form-control" required></div>
-		<div class="row">
-			<div class="col-md-6">
-				<div class="form-group"><label>UID Number</label><input type="text" class="form-control" placeholder="UID Number" name="uid_no_" ' + (i + 1) + ' required></div>
-			</div>
-			<div class="col-md-6">
-				<div class="form-group"><label>Pan Number</label><input type="text" class="form-control" placeholder="Pan Number" name="pan_no_" ' + (i + 1) + ' required></div>
-			</div>
-		</div>
-		<div class="form-group"><label>Email </label><input type="email" class="form-control" placeholder="Email Address" name="email_" ' + (i + 1) + ' required></div>
-		<div class="form-group"><label>Phone Number </label><input type="text" class="form-control" placeholder="Phone Number" name="phone_no_" ' + (i + 1) + ' required></div>
-	</div>
+<div>
+	<table border='0' cellpadding='0' cellspacing='0' height='100%' style='font-family:&quot;Arial&quot;' width='100%'>
+		<tbody>
+			<tr>
+				<td align='center' valign='top'>
+					<table border='0' cellpadding='0' cellspacing='0' style='font-family:&quot;Arial&quot;;border:1px solid #ecedee' width='600'>
+						<tbody>
+							<tr>
+								<td align='center' valign='top'>
+									<table border='0' cellpadding='0' cellspacing='0' height='50' style='font-family:&quot;Arial&quot;;font-size:13px;padding:20px 40px 0 40px' width='100%'>
+										<tbody>
+											<tr>
+												<td align='center' style='margin:0;padding:0' valign='middle'><a href='http://localhost/Sahaya/views/admin/pages/login2.php' style='text-decoration:none;color:#222;font-size: 20px;'> Sahaya Foundation <img height='30' src='cid:logo' style='width:30px;height:30px' width='30'></a></td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td align='center' valign='top'>
+									<table border='0' cellpadding='0' cellspacing='0' style='font-family:&quot;Arial&quot;;background-color:#fff;font-size:14px;color:#46535e;border-radius:3px;padding-top:30px' width='100%'>
+										<tbody>
+											<tr>
+												<td align='left' valign='top'>
+													<div style='color:#fff;background-image:url(https://ci5.googleusercontent.com/proxy/HCXBN17Mw8b7GgEiF5k8bt56EMh5Q5WbYnIlta8fUehYfGpB4f79NphBAC6SC2py6927R3rcCLbGOc2MrQ0EgT4m-nKWg_HzlYWf13P36_ZvMGq24I82pvoD9JVbM2r494vwZyW800n9YuvFT6gsNA=s0-d-e1-ft#https://static-fastly.hackerearth.com/static/emails/images/practice/practice_intro_header.png);padding:48px 20px 48px 20px;text-align:center;font-size:30px;margin:0 0 24px 0'><span style='font-size:14px;line-height:2'>{$username}, are you helping for Good?</span><span style='display:block;font-size:24px;margin:10px 0 0 0'>LET`S HELP TOGETHER TODAY</span></div>
+													<div style='margin:0 30px 36px 30px'><span style='display:block;margin:0 0 18px 0;font-size:14px;line-height:2'>You joined Sahaya Foundation with a goal to be a better person.We aim to provide you with all the resources to achieve your goal.</span>
+														<div style='margin:0 auto;display:table'><a style='font-size:14px;border-radius:3px;display:inline-block;text-decoration:none;color:#fff;text-align:center;padding:15px 20px;width:180px;background-color:#f60' href='{$base_url_link}'>Activate your account</a></div>
+													</div>
+													<div style='line-height:2;margin:30px 0 18px 30px;color:#b2b2b2'>
+														<div>Regards,</div>
+														<div>Team Sahaya</div>
+													</div>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td align='center' valign='top'>
+									<table border='0' cellpadding='0' cellspacing='0' style='font-family:&quot;Arial&quot;;font-size:12px;color:#666;padding-top:30px' width='100%'>
+										<tbody>
+											<tr>
+												<td align='left' style='padding:0 20px;font-size:12px;color:#90979e' valign='top'>This email was sent to you because you are subscribed / Requested for recommendation related to help orphans on Sahaya Foundation</td>
+											</tr>
+											<tr>
+												<td><a href='http://localhost/Sahaya/views/admin/pages/login2.php'><img height='auto' src='cid:mail-logo' style='width:100%;height:auto' width='100%'></a></td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</td>
+			</tr>
+		</tbody>
+	</table>
 </div>
