@@ -55,10 +55,7 @@ class Employee
     }
    
    public function checkEmployee($emp_email,$emp_password){
-      if(($this->collection->countDocuments(["emp_email"=>$emp_email,"emp_password"=>$emp_password]))>1){
-         return false;
-      }
-      $rs = $this->collection->find(["emp_email"=>$emp_email,"emp_password"=>$emp_password]);
+      $rs = $this->collection->find(array("emp_email"=>$emp_email,"emp_password"=>$emp_password));
       return $rs;
    }
 
