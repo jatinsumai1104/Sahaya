@@ -7,14 +7,13 @@ require_once('../includes/breadcrumbs.php');
 require_once('../../includes/bootstrap.php');
 ?>
 	<!--Add Panel-->
-<<<<<<< HEAD
 <?php
 if(isset($_POST['updateDetails'])){
 //echo "hello";
 //echo $_POST['child_id'];
 
-    //dbname will be extracted from Session later currently use testing
-    $child_object = new Children('testing');
+
+    $child_object = new Children($_SESSION['branch']);
     $rs = iterator_to_array($child_object->getChild($_POST['child_id']));
     $child_first_name= (explode(' ',$rs[0]['child_name']))[0];
     $child_last_name= (explode(' ',$rs[0]['child_name']))[1];
@@ -116,9 +115,6 @@ if(isset($_POST['updateDetails'])){
     </div><!-- /.panel-->
 <?php }else{
 ?>
-=======
-
->>>>>>> 9c0d8c0b060174ef2e40013649711efc852700e8
 	<div class="row">
 		<div class="col-lg-12">
 			<div class="panel panel-default">
