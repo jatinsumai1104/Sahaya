@@ -8,6 +8,7 @@
 
 session_start();
 require_once ("../../includes/bootstrap.php");
+require_once ("../../includes/constants.php");
 if(isset($_POST["register_child"])){
     extract($_POST);
 //echo"hello";
@@ -29,15 +30,14 @@ if(isset($_POST["register_child"])){
     }
 
     $child_details_array=["child_name"=>$child_first_name." ".$child_last_name,"gender"=>$gender,"dob"=>$dob,"birthmark"=>$birthmark,"disability"=>$disability,"date_of_admission"=>$date_of_admission,"source_of_admission"=>$source_of_admission,"child_image"=>$child_image,"image_extension"=>$image_extension,"current_standard"=>$current_standard,"personal_documents"=>$personal_documents,"document_extension"=>$document_extension];
-<<<<<<< HEAD
-//Session dbname
-    $child_object =new Children('testing');
-=======
+
 
 
     $child_object =new Children($_SESSION['branch']);
->>>>>>> 9c0d8c0b060174ef2e40013649711efc852700e8
     $child_object->insertChild($child_details_array);
+    $basepage= BASEPAGES;
+    header("Location: {$basepage}childrens.php");
+
 
 //    var_dump($child_details_array);
 }else if (isset($_POST['update_child'])){
@@ -70,8 +70,10 @@ if(isset($_POST["register_child"])){
         $child_details_array=["child_name"=>$child_first_name." ".$child_last_name,"gender"=>$gender,"dob"=>$dob,"birthmark"=>$birthmark,"disability"=>$disability,"date_of_admission"=>$date_of_admission,"source_of_admission"=>$source_of_admission,"current_standard"=>$current_standard];
     }
 //Session dbname
-    $child_object =new Children('testing');
+    $child_object =new Children($_SESSION['branch']);
 
     $child_object->updateChild($_POST['child_id'],$child_details_array);
+    $basepage= BASEPAGES;
+    header("Location: {$basepage}childrens.php");
 
 }

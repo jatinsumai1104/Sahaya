@@ -12,8 +12,8 @@ if(isset($_POST['updateDetails'])){
 //echo "hello";
 //echo $_POST['child_id'];
 
-    //dbname will be extracted from Session later currently use testing
-    $child_object = new Children('testing');
+
+    $child_object = new Children($_SESSION['branch']);
     $rs = iterator_to_array($child_object->getChild($_POST['child_id']));
     $child_first_name= (explode(' ',$rs[0]['child_name']))[0];
     $child_last_name= (explode(' ',$rs[0]['child_name']))[1];

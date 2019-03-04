@@ -13,7 +13,7 @@
 		$rs=$employee->checkEmployee($emp_email,$emp_password);
 
 		if($rs == false){
-		  echo "Fuck u";
+		  echo "Invalid Login Credentials";
 		}
 		else{
 			$array = iterator_to_array($rs);
@@ -22,8 +22,8 @@
 			$_SESSION['emp_name'] = $array[0]['emp_name'];
 			$_SESSION['branch'] = $branch;
 //			var_dump($array);
-			$baseurl = BASEPAGES;
-			header("Location: {$baseurl}dashboard.php");
+			$basepage = BASEPAGES;
+			header("Location: {$basepage}dashboard.php");
 		}
 
 	}else if(isset($_POST['registerSignUp'])){
@@ -50,6 +50,7 @@
 		$_POST['image_extension'] = $img_ext;
 		$_POST['document_blob'] = $document_blob;
 		$_POST['document_extension'] = $document_ext;
+<<<<<<< HEAD
 		$employee->insertEmployee($_REQUEST['email'], $_POST);	
 		$baseurl = BASEPAGES;
 		header("Location: {$baseurl}login2.php");
@@ -71,4 +72,9 @@
 		
 		$baseurl = BASEPAGES;
 		header("Location: {$baseurl}login2.php");
+=======
+		$employee->insertEmployee($_REQUEST['email'], $_POST);
+        $basepage = BASEPAGES;
+		header("Location: {$basepage}login2.php");
+>>>>>>> 91b8788613cc11bf3d9162041d5afb13bd984530
 	}
