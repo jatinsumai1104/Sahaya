@@ -129,19 +129,23 @@ class Parents
 
 
 
-    public function sendApprovalMail($email){
+    public function sendApprovalMail($email, $parent_id){
 //		$ciphertext_email= $this->encryption->encrypt($email);
         require_once('Mailer.php');
         $mailer = new Mailer();
         $user_email = "$email";
+		$branch = $_SESSION['branch'];
         $subject = "Sahaya Approval Confirmation";
-
+		$base_url_link = "http://localhost/Sahaya/views/admin/pages/parent-sign-up-page.php?email=$email&branch={$branch}&id={$parent_id}";
 
         $body = "
 		<div style='font-family:Roboto; font-size:16px; max-width: 600px; line-height: 21px;'>
 			<h4>Hello,</h4>
-			<h3>Your Approval for adoption is approved</h3>
+			<h3>Your Approval for adoption is Accepted</h3>
+			<h4>Please Continue for SignUp</h4>
 			<br>
+			<a style='text-decoration:none; color:#fff; background-color:#348eda;border:solid #348eda; border-width:2px 10px; line-height:2;font-weight:bold; text-align:center; display:inline-block;border-radius:4px' href='$base_url_link'>
+			Continue to activate your account </a>
 			<br>
 			<h3>Thank you for Applying.</h3>
 			<br>
@@ -162,6 +166,19 @@ class Parents
 
 
     }
+	
+	public function updateCurrent($data){
+		extract($data);
+		$newdata=array('$set'=>array("parent_user_name"=>$parent_username, "parent_password"=>$parent_password));
+        if($this->collection->updateOne(array("parent_id" => $parent_id), $newdata)){
+			//session of parent needs to be created
+			$baseurl = BASEPAGES;
+			header("Location: {$baseurl}dashboard.php");	
+		}else{
+			echo "Something is wrong";
+		}
+		
+	}
 
 
 }

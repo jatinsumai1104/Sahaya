@@ -53,4 +53,22 @@
 		$employee->insertEmployee($_REQUEST['email'], $_POST);	
 		$baseurl = BASEPAGES;
 		header("Location: {$baseurl}login2.php");
+	}else if(isset($_REQUEST['parent_sign_up'])){
+		$branch = $_REQUEST['branch'];
+		$parent = new Parents($branch);
+		$parent->updateCurrent($_POST);
+		
+		$_SESSION['emp_id'] = $_REQUEST['parent_id'];
+		$_SESSION['emp_role'] = 3;
+		$_SESSION['emp_name'] = $_REQUEST['parent_username'];
+		$_SESSION['branch'] = $_REQUEST['branch'];
+		
+		$baseurl = BASEPAGES;
+		header("Location: {$baseurl}dashboard.php");
+	}else if(isset($_REQUEST['logout']) && $_REQUEST['logout'] == 1){
+		
+		session_destroy();
+		
+		$baseurl = BASEPAGES;
+		header("Location: {$baseurl}login2.php");
 	}

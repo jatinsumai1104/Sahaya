@@ -48,10 +48,10 @@ if(isset($_POST['register_parent'])){
 
 
         if($array[0]['is_single_parent'] == "0"){
-            $parents->sendApprovalMail($array[0]['perspective_parent_1']['email']);
+            $parents->sendApprovalMail($array[0]['perspective_parent_1']['email'], $parent_id);
         }else{
-            $parents->sendApprovalMail($array[0]['perspective_parent_1']['email']);
-            $parents->sendApprovalMail($array[0]['perspective_parent_2']['email']);
+            $parents->sendApprovalMail($array[0]['perspective_parent_1']['email'], $parent_id);
+            $parents->sendApprovalMail($array[0]['perspective_parent_2']['email'], $parent_id);
         }
     }else{
         if(isset($_POST['reject_parent'])){
