@@ -1,95 +1,43 @@
 <?php
-//session_start();
-require_once ('../../includes/bootstrap.php');
-require_once('../includes/header-bp.php');
-$_SESSION['current_page'] = "Approvals View";
-require_once('../includes/navigation.php');
-require_once('../includes/sidebar.php');
-require_once('../includes/breadcrumbs.php');
-//print_r($_SESSION);
 
-$children = new Children($_SESSION['branch']);
+session_start();
 
-$array = iterator_to_array($children->getChild($_POST['child_id']));
+require_once ("../../includes/bootstrap.php");
 
-file_put_contents("../../../assets/images/uploads/".$array[0]['child_id'].".".$array[0]['child_image']["image_extension"],$array[0]['child_image']['image']);
-file_put_contents("../../../assets/images/uploads/".$array[0]['child_id'].".".$array[0]['personal_documents']["document_extension"],$array[0]['personal_documents']['personal_documents']);
-?>
-    <div class="row">
-        <div class="panel panel-info">
-            <div class="panel-heading">
-                <h1 class="panel-title" style="font-size: 22px;">
-                    <?php ?>
-                </h1>
-            </div>
-            <div class="panel-body">
-                <div class="row">
-                    <div id="demo" class="carousel slide col-md-3 col-lg-3" data-ride="carousel" align="center">
-                        <!-- The slideshow -->
-                        <div class="carousel-inner">
+if(isset($_POST['approveAdoption'])){
 
-                            <div class="carousel-item">
-                                <img src="../../../assets/images/uploads/<?php echo $array[0]['child_id'].".".$array[0]['child_image']["image_extension"] ?>" class="img-responsive" alt="">
-                            </div>
+    $pending_approvals = new Pending_Approvals($_SESSION['branch']);
 
-                        </div>
+    $adopted = new AdoptedChildrens($_SESSION['branch']);
 
-                        <!-- Left and right controls -->
-                        <a class="carousel-control-prev" href="#demo" data-slide="prev">
-                            <span class="carousel-control-prev-icon"></span>
-                        </a>
-                        <a class="carousel-control-next" href="#demo" data-slide="next">
-                            <span class="carousel-control-next-icon"></span>
-                        </a>
-                    </div>
-                    <div class=" col-md-9 col-lg-9 ">
-                        <table class="table table-user-information">
-                            <tbody>
-                            <tr>
-                                <td>Date of Birth</td>
-                                <td>
-                                    <?php echo $array[0]['dob'];?>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Age</td>
-                                <td>
-                                    <?php echo $children->calculateChildAge($_POST['child_id']);?>
-                                </td>
-                            </tr>
-                            <tr>
-                            <tr>
-                                <td>Gender</td>
-                                <td>
-                                    <?php echo $array[0]['gender'];?>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Disability</td>
-                                <td>
-                                    <?php echo $array[0]['disability'];?>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>View Documents</td>
-                                <td><a class="btn btn-md btn-info" type="button" href="../../../assets/documents/<? echo $array[0]['child_id'].'.'.$array[0]['personal_documents']['document_extension'];?>">Click Me</a> </td> </tr> <tr>
-                                <td>
-                                    Adoption
-                                </td>
-                                <td>
-                                    <?php  if($array[0]['is_adopted']=="NO"){echo "NOT ADOPTED";}
-                                    else{
-                                        echo "ADOPTED";
-                                    }?>
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-<?php
-require_once('../includes/footer-bp.php');
+    $array = iterator_to_array($pending_approvals->getPendingApprovalById($_POST['pending_approvals_id']));
+
+    $parent = new Parents($_SESSION['branch']);
+
+    $children = new Children($_SESSION['branch']);
+
+    $child_document = " ";
+
+    $document_ext = " ";
+
+    if(isset($_FILES)){
+        $child_document = new MongoDB\BSON\Binary(file_get_contents($_FILES['child_consent_document']['tmp_name']), MongoDB\BSON\Binary::TYPE_GENERIC);
+        $temp = explode("/", $_FILES['child_consent_document']['type']);
+        $document_ext = $temp[1];
+    }
+
+    $child_image = iterator_to_array($children->getChild($array[0]['child_id']));
+
+
+
+    $data = ["child_id"=>$array[0]['child_id'],"parent_id"=>$array[0]['parent_id'],"child_document"=>$child_document,"document_ext"=>$document_ext,"pending_approval_id"=>$array[0]['pending_approvals_id'],"child_image"=>$child_image[0]['child_image']];
+
+    $pending_approvals->approveApproval($_POST['pending_approvals_id']);
+
+    $adopted->insertAdoptedChildren($data);
+
+}
+
+
+
 ?>

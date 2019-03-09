@@ -3,9 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="be6000e1-570e-4fd7-939c-3f4794fce8d3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/AdoptedChilrens.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/classes/AdoptedChildrens.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/Branch.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Branch.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/uploads/DADAR_CHD_1.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/uploads/DADAR_CHD_1.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/uploads/DADAR_PRT_1.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/uploads/DADAR_PRT_1.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/AdoptedChildrens.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/classes/AdoptedChildrens.class.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/Parents.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Parents.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/Pending_Approvals.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Pending_Approvals.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/admin/helper/adoptChild_routing.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/helper/adoptChild_routing.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/admin/helper/cronjob.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/helper/cronjob.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/admin/pages/approveAdoption.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/pages/approveAdoption.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/includes/bootstrap.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/includes/bootstrap.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -65,7 +71,7 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="htaccess" value="1" />
-          <entry key="php" value="60" />
+          <entry key="php" value="68" />
           <entry key="png" value="2" />
           <entry key="txt" value="3" />
         </counts>
@@ -73,7 +79,7 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Image" value="2" />
-          <entry key="PHP" value="60" />
+          <entry key="PHP" value="68" />
           <entry key="PLAIN_TEXT" value="3" />
           <entry key="htaccess" value="1" />
         </counts>
@@ -82,13 +88,13 @@
         <counts>
           <entry key="dummy" value="1" />
           <entry key="htaccess" value="1" />
-          <entry key="php" value="7327" />
+          <entry key="php" value="9036" />
           <entry key="txt" value="186" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PHP" value="7327" />
+          <entry key="PHP" value="9036" />
           <entry key="PLAIN_TEXT" value="187" />
           <entry key="htaccess" value="1" />
         </counts>
@@ -103,19 +109,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classes/Children.class.php">
+        <entry file="file://$PROJECT_DIR$/classes/routing.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-100">
-              <caret line="71" column="42" lean-forward="true" selection-start-line="71" selection-start-column="42" selection-end-line="71" selection-end-column="42" />
+            <state relative-caret-position="102">
+              <caret line="11" selection-start-line="11" selection-end-line="11" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/classes/Parents.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="356">
-              <caret line="164" lean-forward="true" selection-start-line="164" selection-end-line="164" />
+            <state relative-caret-position="254">
+              <caret line="167" column="22" selection-start-line="167" selection-start-column="22" selection-end-line="167" selection-end-column="22" />
               <folding>
                 <element signature="n#style#0;n#table#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#table#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#!!top" expanded="true" />
@@ -141,55 +147,28 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classes/routing.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/classes/Pending_Approvals.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="580">
-              <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
+            <state relative-caret-position="340">
+              <caret line="36" column="194" lean-forward="true" selection-start-line="36" selection-start-column="194" selection-end-line="36" selection-end-column="207" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classes/AdoptedChildrens.class.php">
+        <entry file="file://$PROJECT_DIR$/views/admin/pages/approveAdoption.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+            <state relative-caret-position="4063">
+              <caret line="239" column="76" selection-start-line="239" selection-start-column="76" selection-end-line="239" selection-end-column="76" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/admin/helper/cronjob.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="24" column="4" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/includes/bootstrap.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="42" selection-start-line="7" selection-start-column="42" selection-end-line="7" selection-end-column="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classes/Branch.class.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="526">
-              <caret line="29" column="268" selection-start-line="29" selection-start-column="239" selection-end-line="29" selection-end-column="268" />
+            <state relative-caret-position="425">
+              <caret line="51" column="67" lean-forward="true" selection-start-line="51" selection-start-column="67" selection-end-line="51" selection-end-column="67" />
             </state>
           </provider>
         </entry>
@@ -232,12 +211,15 @@
         <option value="$PROJECT_DIR$/views/admin/helper/login_routing.php" />
         <option value="$PROJECT_DIR$/views/admin/pages/childrens.php" />
         <option value="$PROJECT_DIR$/views/admin/pages/complete-child-detail.php" />
-        <option value="$PROJECT_DIR$/classes/Pending_Approvals.class.php" />
         <option value="$PROJECT_DIR$/classes/Branch.class.php" />
         <option value="$PROJECT_DIR$/classes/AdoptedChilrens.class.php" />
         <option value="$PROJECT_DIR$/views/includes/bootstrap.php" />
-        <option value="$PROJECT_DIR$/classes/Parents.class.php" />
+        <option value="$PROJECT_DIR$/views/admin/pages/approveAdoption.php" />
+        <option value="$PROJECT_DIR$/classes/AdoptedChildrens.class.php" />
+        <option value="$PROJECT_DIR$/views/admin/helper/adoptChild_routing.php" />
+        <option value="$PROJECT_DIR$/classes/Pending_Approvals.class.php" />
         <option value="$PROJECT_DIR$/views/admin/helper/cronjob.php" />
+        <option value="$PROJECT_DIR$/classes/Parents.class.php" />
       </list>
     </option>
   </component>
@@ -294,6 +276,13 @@
               <item name="views" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="admin" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="helper" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="sahaya" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="views" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="admin" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="pages" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
               <item name="sahaya" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
@@ -403,13 +392,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54680000" />
+    <option name="totallyTimeSpent" value="59330000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.11951589" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21633889" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -435,6 +424,16 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/classes/routing.php</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/includes/Constants.php" />
@@ -479,13 +478,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/admin/pages/signUp.php">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/admin/helper/registerChild_routing.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="37" column="52" selection-start-line="37" selection-start-column="52" selection-end-line="37" selection-end-column="52" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/admin/pages/parents.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -556,38 +548,76 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/includes/bootstrap.php">
+    <entry file="file://$PROJECT_DIR$/views/admin/helper/request_child.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/AdoptedChildrens.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="42" selection-start-line="7" selection-start-column="42" selection-end-line="7" selection-end-column="42" />
+        <state relative-caret-position="255">
+          <caret line="22" column="270" selection-start-line="22" selection-start-column="270" selection-end-line="22" selection-end-column="270" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classes/Children.class.php">
+    <entry file="file://$PROJECT_DIR$/views/admin/helper/registerChild_routing.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-100">
-          <caret line="71" column="42" lean-forward="true" selection-start-line="71" selection-start-column="42" selection-end-line="71" selection-end-column="42" />
+        <state relative-caret-position="255">
+          <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="22" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/admin/helper/adoptChild_routing.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="28" column="81" selection-start-line="28" selection-start-column="81" selection-end-line="28" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/includes/bootstrap.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="52" selection-start-line="5" selection-start-column="52" selection-end-line="5" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/admin/pages/approveAdoption.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4063">
+          <caret line="239" column="76" selection-start-line="239" selection-start-column="76" selection-end-line="239" selection-end-column="76" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/classes/Pending_Approvals.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="580">
-          <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
+        <state relative-caret-position="340">
+          <caret line="36" column="194" lean-forward="true" selection-start-line="36" selection-start-column="194" selection-end-line="36" selection-end-column="207" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/Children.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="85" column="28" lean-forward="true" selection-start-line="85" selection-start-column="28" selection-end-line="85" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/classes/routing.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/admin/helper/cronjob.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="51" column="67" lean-forward="true" selection-start-line="51" selection-start-column="67" selection-end-line="51" selection-end-column="67" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/classes/Parents.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
-          <caret line="164" lean-forward="true" selection-start-line="164" selection-end-line="164" />
+        <state relative-caret-position="254">
+          <caret line="167" column="22" selection-start-line="167" selection-start-column="22" selection-end-line="167" selection-end-column="22" />
           <folding>
             <element signature="n#style#0;n#table#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#table#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#!!top" expanded="true" />
@@ -608,20 +638,6 @@
             <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#td#0;n#tr#2;n#tbody#0;n#table#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#a#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#td#0;n#tr#2;n#tbody#0;n#table#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#!!top" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/AdoptedChildrens.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/admin/helper/cronjob.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="24" column="4" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
         </state>
       </provider>
     </entry>

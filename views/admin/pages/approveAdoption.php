@@ -235,8 +235,9 @@ file_put_contents("../../../assets/images/uploads/".$parent[0]['parent_id'].".".
             <div class="panel-footer">
                 <a data-original-title="Broadcast Message" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary"><i class="glyphicon glyphicon-envelope"></i></a>
                 <span class="pull-right">
-				<form action="<?php echo BASEURL."views/admin/helper/adoptChild.php";?>" method="post">
+				<form action="<?php echo BASEURL."views/admin/helper/adoptChild_routing.php";?>" method="post" enctype="multipart/form-data">
 					<input name="pending_approvals_id" value="<?php echo $pending_approvals_id;?>" hidden>
+                    <input type="file" required name="child_consent_document">
                         <button type="submit" class="btn btn-primary" name="approveAdoption">Approve Adoption</button>
 				</form>
 			</span>

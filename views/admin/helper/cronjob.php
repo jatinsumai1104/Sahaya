@@ -38,14 +38,18 @@ for($i = 0 ; $i < count($array) ; $i++){
 
         $child_age = $children->calculateChildAge($array2[$j]['child_id']);
 
-        $date_adoption = $array2[$j]['adopted_date'];
+        $date_adoption = $array2[$j]['last_updated_at'];
          $date_adoption = date_create($date_adoption);
-         date_add($date_adoption,date_interval_create_from_date_string("1 years"));
-         var_dump($date_adoption);
+
+
+        $interval = date_diff($date_adoption,date_create(date("Y-m-d H:i:s")));
+
+
+
         if($child_age < 18){
 
-            if(date_add(date_create($adopted_children),date_interval_create_from_date_string("1 years")) == $date("Y-m-d")){
-                echo "Hello";
+            if($interval->y == 1){
+                $parents->mailImageUpload($parent[0]['parent_id']);
             }
 
         }

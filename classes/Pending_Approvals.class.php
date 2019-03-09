@@ -32,8 +32,8 @@ class Pending_Approvals
         extract($array);
 
         $pending_approvals_id = $this->getCount();
-        $res=$this->collection->find(["parent_id"=>$parent_id, "child_id"=>$child_id]);
-        if($res == null){
+        $res=$this->collection->countDocuments(["parent_id"=>$parent_id, "child_id"=>$child_id]);
+        if($res == 0){
             $this->collection->insertOne(["pending_approvals_id"=>"$pending_approvals_id","parent_id"=>$parent_id,"child_id"=>$child_id,"status"=>"Pending","deleted"=>'0' , "applied_on" => date("Y-m-d H:i:s")]);
         }
     }
@@ -42,7 +42,7 @@ class Pending_Approvals
     public function  rejectApproval($pending_approvals_id){
         $array = ['$set'=>["status"=>"Rejected","deleted"=>1]];
 
-        $this->collectionName->updateOne(array("pending_approvals_id"=>$pending_approvals_id),$array);
+        $this->collection->updateOne(array("pending_approvals_id"=>$pending_approvals_id),$array);
 
     }
 
@@ -51,14 +51,14 @@ class Pending_Approvals
 
         $array = ['$set'=>["status"=>"Accepted","deleted"=>1]];
 
-        $this->collectionName->updateOne(array("pending_approvals_id"=>$pending_approvals_id),$array);
+        $this->collection->updateOne(array("pending_approvals_id"=>$pending_approvals_id),$array);
 
 
 
     }
 
     public function getData(){
-        $res = iterator_to_array($this->collection->find(["deleted"=>0]));
+        $res = iterator_to_array($this->collection->find(["deleted"=>"0"]));
         return $res;
     }
 
