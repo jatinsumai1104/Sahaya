@@ -42,6 +42,4 @@ class AdoptedChildrens{
        $rs = $this->collection->find(["adopted_child_id"=>$adopted_child_id]);
 	}
 }
-
-
 ?>

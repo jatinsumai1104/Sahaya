@@ -31,10 +31,7 @@ for($i = 0 ; $i < count($result) ; $i++) {
 				<th scope="col">#</th>
 				<th scope="col">Parent name</th>
 				<th scope="col">Child Name</th>
-				
 				<th scope="col">View</th>
-				<th scope="col">Approve</th>
-				<th scope="col">Reject</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -45,8 +42,8 @@ for($i = 0 ; $i < count($result) ; $i++) {
 				<td><?php  echo $parent_name;?></td>
 				<td><?php echo $child_name; ?></td>
 				<td>
-					<form action="../helper/pending_approvals_routing.php" method="post">
-						<input type="text" value="<?php echo $result[$i]['pending_approvals_id'];?>" hidden name="Pending_approvals_id">
+					<form action="approveAdoption.php" method="post">
+						<input type="text" value="<?php echo $result[$i]['pending_approvals_id'];?>" hidden name="pending_approvals_id">
 						<button type="submit" class="btn btn-sm btn-info" name="view_parent">View</button>
 					</form>
 				</td>

@@ -79,7 +79,6 @@ class Parents
 
     public function calculateParentAge($parent_id){
         $rs = $this->getParent($parent_id);
-
         $array = iterator_to_array($rs);
 
         $dob = $array[0][""];
@@ -127,7 +126,6 @@ class Parents
 
     public function getParentName($parent_id){
         $res = iterator_to_array($this->collection->find(["parent_id"=>$parent_id]));
-//        echo "HI";
         return $res[0]['perspective_parent_1']['parent_name'];
     }
     public function changeStatusReject($parent_id){
