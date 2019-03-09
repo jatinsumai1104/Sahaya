@@ -45,9 +45,10 @@ require_once('../includes/breadcrumbs.php');
 
 //        var_dump($array);
     ?>
-<? for($i=0;$i<$children->getChildrenCount();$i++) {
+<? 
+    for($i=0;$i<$children->getChildrenCount();$i++) {
         file_put_contents("../../../assets/images/uploads/".$array[$i]['child_id'].".".$array[$i]['child_image']["image_extension"],$array[$i]['child_image']['image']);
-    ?>
+?>
     <form action="complete-child-detail.php" method="post">
         <div class="col-md-3 col-sm-6 col-xs-6">
             <div class="card">
