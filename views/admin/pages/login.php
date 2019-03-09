@@ -1,4 +1,7 @@
-<?php $_SESSION['current_page'] = 'login';?>
+<?php 
+$_SESSION['current_page'] = 'login';
+require_once('../../includes/bootstrap.php');
+?>
 <!DOCTYPE html>
 <html>
 

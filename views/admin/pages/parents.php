@@ -17,11 +17,11 @@ $maried_parents = iterator_to_array($parents->getMariedParents());
 	<h1 class="page-header">For Single Parent</h1>
 
 
-	<table class="table">
-		<thead class="thead-dark">
-			<tr>
+	<table class="table table-bordered">
+		<thead class="thead-dark" style="background: #222;color: #fff;">
+			<tr style="text-align: center;">
 				<th scope="col">#</th>
-				<th scope="col">Name</th>
+				<th scope="col">Full name</th>
 				<th scope="col">Age</th>
 				<th scope="col">Gender</th>
 				<th scope="col">View</th>
@@ -36,7 +36,7 @@ $maried_parents = iterator_to_array($parents->getMariedParents());
 			if(count($single_parents)){
 				for($i = 0 ; $i < count($single_parents) ; $i++) {
 			?>
-			<tr>
+			<tr style="text-align: center;">
 				<th scope="row"><?php echo ($i+1);?></th>
 				<td><?php  echo $single_parents[$i]['perspective_parent_1']['parent_name'];?></td>
 				<td><?php  echo $single_parents[$i]['perspective_parent_1']['parent_age'];?></td>
@@ -66,9 +66,9 @@ $maried_parents = iterator_to_array($parents->getMariedParents());
 
 
 	<h1 class="page-header">For Married Parent</h1>
-	<table class="table">
-		<thead class="thead-dark">
-			<tr>
+	<table class="table  table-bordered">
+		<thead class="thead-dark"  style="background: #222;color: #fff;">
+			<tr style="text-align: center;">
 				<th scope="col">#</th>
 				<th scope="col">Parent 1 Name</th>
 				<th scope="col">Parent 1 Age</th>
@@ -84,7 +84,7 @@ $maried_parents = iterator_to_array($parents->getMariedParents());
 		<tbody>
 
 			<?php for($i = 0 ; $i < count($maried_parents); $i++){ ?>
-			<tr>
+			<tr style="text-align: center;">
 				<th scope="row"><?php echo ($i+1);?></th>
 				<td><?php  echo $maried_parents[$i]['perspective_parent_1']['parent_name'];?></td>
 				<td><?php  echo $maried_parents[$i]['perspective_parent_1']['parent_age'];?></td>
