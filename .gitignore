@@ -1,2 +1,7 @@
 #Ignoring .idea folder
-.idea/workspace.iml
+.idea/workspace.xml
+.idea/encodings.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/sahaya.iml
+.idea/vcs.xml
