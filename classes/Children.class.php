@@ -77,18 +77,18 @@ class Children
 
     public function calculateChildAge($child_id){
         $rs = $this->getChild($child_id);
-
         $array = iterator_to_array($rs);
-
         $dob = $array[0]["dob"];
+        $current_date = date("Y-m-d");
+        echo $dob."<br>";
+        echo $current_date."<br>";
 
-        $year =  explode("-",$dob)[0];
+        $sdate = new DateTime($dob);
+        $edate = new DateTime($current_date);
+        $interval = $sdate->diff($edate);
+        $age = $interval->y;
 
-       $current_year = date("Y");
-
-       $age =  $current_year - $year;
-
-       return $age;
+        return $age;
 
     }
 
