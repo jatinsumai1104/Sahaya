@@ -60,7 +60,10 @@ class Pending_Approvals
     }
 
 
-    
+    public function getData(){
+        $res = iterator_to_array($this->collection->find(["deleted"=>0]));
+        return $res;
+    }
 
 
 

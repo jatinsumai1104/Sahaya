@@ -29,7 +29,12 @@ class Children
     {
         $this->collection = (new Database($db_name))->getRequiredCollection($this->collectionName);
     }
-
+    
+    public function getChildName($child_id){
+        $res = iterator_to_array($this->getChild($child_id));
+        return $res[0]['child_name'];
+        
+    }
 
     public function insertChild($array){
         extract($array);
