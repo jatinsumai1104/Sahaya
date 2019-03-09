@@ -55,12 +55,12 @@
 		$branch = $_REQUEST['branch'];
 		$parent = new Parents($branch);
 		$parent->updateCurrent($_POST);
-		
+		$rs = $parent->getParent($_REQUEST['parent_id'], $_REQUEST['branch']);
 		$_SESSION['emp_id'] = $_REQUEST['parent_id'];
 		$_SESSION['emp_role'] = 3;
 		$_SESSION['emp_name'] = $_REQUEST['parent_username'];
 		$_SESSION['branch'] = $_REQUEST['branch'];
-		
+		$_SESSION['parent_status'] = $rs[0]['is_single_parent'];
 		$baseurl = BASEPAGES;
 		header("Location: {$baseurl}dashboard.php");
 	}else if(isset($_REQUEST['logout']) && $_REQUEST['logout'] == 1){
@@ -69,4 +69,20 @@
 		
 		$baseurl = BASEPAGES;
 		header("Location: {$baseurl}login2.php");
+	}else if(isset($_REQUEST['parent_login'])){
+		$branch = $_REQUEST['branch'];
+		$parent = new Parents($branch);
+		$array = $parent->getParentByEmail($_REQUEST['parent_username'], $_REQUEST['parent_password']);
+		$rs = iterator_to_array($array);
+		if(count($rs)!=1){
+			echo "Invalid Credentials";
+		}else{
+			$_SESSION['emp_id'] = $rs[0]['parent_id'];
+			$_SESSION['emp_role'] = 3;
+			$_SESSION['emp_name'] = $rs[0]['parent_user_name'];
+			$_SESSION['branch'] = $_REQUEST['branch'];
+			$_SESSION['parent_status'] = $rs[0]['is_single_parent'];
+			$baseurl = BASEPAGES;
+			header("Location: {$baseurl}dashboard.php");
+		}
 	}

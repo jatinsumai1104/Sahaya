@@ -115,7 +115,11 @@ class Parents
 
         return $rs;
     }
-
+	
+	public function getParentByEmail($user_name, $password){
+		$rs = $this->collection->find(["parent_user_name"=>$user_name, "parent_password"=>$password]);
+        return $rs;
+	}
     public function changeStatusApprove($parent_id){
         $newdata=array('$set'=>array("is_verified"=>true));
         $this->collection->updateOne(array("parent_id" => $parent_id), $newdata);
@@ -158,9 +162,10 @@ class Parents
 		extract($data);
 		$newdata=array('$set'=>array("parent_user_name"=>$parent_username, "parent_password"=>$parent_password));
         if($this->collection->updateOne(array("parent_id" => $parent_id), $newdata)){
+			echo "Parent successfully updated";
 			//session of parent needs to be created
-			$baseurl = BASEPAGES;
-			header("Location: {$baseurl}dashboard.php");	
+//			$baseurl = BASEPAGES;
+//			header("Location: {$baseurl}dashboard.php");	
 		}else{
 			echo "Something is wrong";
 		}
