@@ -6,6 +6,7 @@ $_SESSION['current_page'] = "Sign Up";
 
 <div class="row">
 	<div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4">
+		<h3 style="color: black;text-align: center;"><span><img src="<?php echo BASEPLUGINS;?>images/logo.png" alt="" width="75px" height="75px"> SAHAYA</span> - THE CHILD ADOPTION</h3>
 		<div class="login-panel panel panel-default">
 			<div class="panel-heading">Sign Up Now!</div>
 			<div class="panel-body">
