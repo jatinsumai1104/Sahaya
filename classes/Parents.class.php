@@ -79,7 +79,6 @@ class Parents
 
     public function calculateParentAge($parent_id){
         $rs = $this->getParent($parent_id);
-
         $array = iterator_to_array($rs);
 
         $dob = $array[0][""];
@@ -127,7 +126,6 @@ class Parents
 
     public function getParentName($parent_id){
         $res = iterator_to_array($this->collection->find(["parent_id"=>$parent_id]));
-//        echo "HI";
         return $res[0]['perspective_parent_1']['parent_name'];
     }
     public function changeStatusReject($parent_id){
@@ -161,7 +159,33 @@ class Parents
 
 
     }
-	
+
+
+    public function mailImageUpload($parent_id){
+        require_once('Mailer.php');
+        $mailer = new Mailer();
+
+        $subject = "";
+
+        $par = iterator_to_array($this->getParent($parent_id));
+
+        if($par[0]['is_single_parent'] == '0'){
+            $email = $par[0]['perspective_parent_1']['email'];
+            $boolean=$mailer->send_mail($email, "<HTML>fk</HTML>", $subject);
+
+        }
+        else{
+            $email =$par[0]['perspective_parent_1']['email'];
+            $boolean=$mailer->send_mail($email, "<HTML>fk</HTML>", $subject);
+            $email =$par[0]['perspective_parent_2']['email'];
+            $boolean=$mailer->send_mail($email, "<HTML>fk</HTML>", $subject);
+        }
+
+
+    }
+
+
+
 	public function updateCurrent($data){
 		extract($data);
 		$newdata=array('$set'=>array("parent_user_name"=>$parent_username, "parent_password"=>$parent_password));

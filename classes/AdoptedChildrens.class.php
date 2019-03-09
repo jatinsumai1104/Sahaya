@@ -2,7 +2,8 @@
 
 require_once("Database.class.php");
 
-class AdoptedChildrens{
+class AdoptedChildrens
+{
 	private $collection;
     private $collectionName="AdoptedChildrens";
 	private $db_name;
@@ -19,7 +20,7 @@ class AdoptedChildrens{
 		$children = new Children($this->db_name);
 		$child = $children->getChild($child_id);
 		$adopted_child_id = "DADAR_ADCHD_" .($this->getChildrenCount()+1);
-		$this->collection->insertOne(["adopted_child_id"=>$adopted_child_id, "child_id"=>$child_id, "parent_id"=>$parent_id, "child_consent_document"=>$child_consent_document, "child_img_verified"=>0, "child_image"=>$child[0]['child_image'], "pending_approval_id"=>$pending_approval_id, "adopted_date"=>date("Y-m-d h:i:s"), "last_updated_at"=>date("Y-m-d h:i:s")]);
+		$this->collection->insertOne(["adopted_child_id"=>$adopted_child_id, "child_id"=>$child_id, "parent_id"=>$parent_id, "child_consent_document"=>["child_document"=>$child_document,"document_ext"=>$document_ext], "child_img_verified"=>0, "child_image"=>$child_image, "pending_approval_id"=>$pending_approval_id, "adopted_date"=>date("Y-m-d h:i:s"), "last_updated_at"=>date("Y-m-d h:i:s")]);
 	}
 	
 	public function getChildrenCount(){
@@ -42,6 +43,4 @@ class AdoptedChildrens{
        $rs = $this->collection->find(["adopted_child_id"=>$adopted_child_id]);
 	}
 }
-
-
 ?>
