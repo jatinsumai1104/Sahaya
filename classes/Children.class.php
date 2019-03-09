@@ -80,9 +80,6 @@ class Children
         $array = iterator_to_array($rs);
         $dob = $array[0]["dob"];
         $current_date = date("Y-m-d");
-        echo $dob."<br>";
-        echo $current_date."<br>";
-
         $sdate = new DateTime($dob);
         $edate = new DateTime($current_date);
         $interval = $sdate->diff($edate);
