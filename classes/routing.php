@@ -6,9 +6,10 @@
  * Time: 07:12 PM
  */
 
-require_once ("Parents.class.php");
+require_once ("Children.class.php");
+$child_obj = (new Children("DADAR"))->calculateChildAge("DADAR_CHD_1");
 
-$parents = new Parents();
+//$parents = new Parents();
 
 //if(isset($_POST['child_submit'])){
 //    unset($_POST['child_submit']);

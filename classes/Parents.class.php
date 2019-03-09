@@ -125,7 +125,11 @@ class Parents
         $this->collection->updateOne(array("parent_id" => $parent_id), $newdata);
     }
 
-
+    public function getParentName($parent_id){
+        $res = iterator_to_array($this->collection->find(["parent_id"=>$parent_id]));
+//        echo "HI";
+        return $res[0]['perspective_parent_1']['parent_name'];
+    }
     public function changeStatusReject($parent_id){
         $newdata=array('$set'=>array("is_verified"=>null));
         $this->collection->updateOne(array("parent_id" => $parent_id), $newdata);
