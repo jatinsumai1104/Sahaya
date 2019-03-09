@@ -8,9 +8,10 @@
 <!--<![endif]-->
 
 <head>
+	<link rel="shortcut icon" href="<?php echo BASEPLUGINS;?>images/logo.png" />
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Charity &mdash; 100% Free Fully Responsive HTML5 Template by FREEHTML5.co</title>
+	<title>SAHAYA - THE GIRL ADOPTION</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
 	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
@@ -60,16 +61,16 @@
 			<div class="header-top">
 				<div class="container">
 					<div class="row">
-						<div class="col-md-6 col-sm-6 text-left fh5co-link">
-							<a href="#">FAQ</a>
-							<a href="#">Forum</a>
-							<a href="#">Contact</a>
+						<div class="col-md-12 col-sm-6 text-center fh5co-social" style="color: white;">
+							Made with &hearts; by <a href="https://www.medialoot.com" style="color: #111;font-size: 16px;">Sahaya Foundation</a>
 						</div>
+<!--
 						<div class="col-md-6 col-sm-6 text-right fh5co-social">
 							<a href="#" class="grow"><i class="icon-facebook2"></i></a>
 							<a href="#" class="grow"><i class="icon-twitter2"></i></a>
 							<a href="#" class="grow"><i class="icon-instagram2"></i></a>
 						</div>
+-->
 					</div>
 				</div>
 			</div>
