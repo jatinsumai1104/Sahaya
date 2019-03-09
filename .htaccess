@@ -1,4 +1,5 @@
 RewriteEngine On
+RewriteRule ^$ views/landing/index.php
 RewriteRule ^admin/login$ views/admin/pages/login2.php
 RewriteRule ^admin/logout$ views/admin/helper/login_routing.php?logout=1
 #RewriteRule ^admin/sign_up_page$ views/admin/pages/signUp.php
