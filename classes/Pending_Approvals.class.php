@@ -15,7 +15,7 @@ class Pending_Approvals
 
     public function __construct($db_name)
     {
-        $this->collection = (new Database($_SESSION['db_name']))->getRequiredCollection($this->collectionName);
+        $this->collection = (new Database($db_name))->getRequiredCollection($this->collectionName);
     }
 
     public function insertPendingApproval($array){
@@ -28,7 +28,6 @@ class Pending_Approvals
 
 
     }
-
 
 
     public function  rejectApproval($pending_approvals_id){
@@ -50,7 +49,7 @@ class Pending_Approvals
     }
 
 
-    
+
 
 
 
