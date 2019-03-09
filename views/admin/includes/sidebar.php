@@ -42,7 +42,7 @@
 		</li>
 		
 		<?php } ?>
-        <li><a href="<?php echo BASEPAGES; ?>approvals.php"><em class="fa fa-power-off">&nbsp;</em> Approvals</a></li>
+        <li><a href="<?php echo BASEPAGES; ?>approvals.php"><em class="fa fa-clock-o">&nbsp;</em> Approvals</a></li>
 		<li><a href="<?php echo BASEURL; ?>admin/logout"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li>
 	</ul>
 </div>
