@@ -56,6 +56,7 @@
 		$parent = new Parents($branch);
 		$parent->updateCurrent($_POST);
 		$rs = $parent->getParent($_REQUEST['parent_id'], $_REQUEST['branch']);
+		$rs = iterator_to_array($rs);
 		$_SESSION['emp_id'] = $_REQUEST['parent_id'];
 		$_SESSION['emp_role'] = 3;
 		$_SESSION['emp_name'] = $_REQUEST['parent_username'];
