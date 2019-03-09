@@ -94,7 +94,11 @@ file_put_contents("../../../assets/images/uploads/".$array[0]['child_id'].".".$a
 			<span class="pull-right">
 				<form action="<?php echo BASEURL."views/admin/pages/submitChild.php";?>" method="post">
 					<input name="child_id" value="<?php echo $array[0]['child_id'];?>" hidden>
+					<?php if($_SESSION['emp_role'] == 3){?>
+					<button type="submit" class="btn btn-primary" name="updateDetails">Mark Request</button>
+					<?php }else{?>
 					<button type="submit" class="btn btn-primary" name="updateDetails">Update Details</button>
+					<?php }?>
 				</form>
 
 			</span>
