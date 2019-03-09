@@ -40,8 +40,9 @@
 				<li class="<?php if($_SESSION['current_page'] == "dashboard") { echo "active" ; }else{ echo "" ; } ?>"><a href="<?php echo BASEPAGES; ?>parents.php"><img src="<?php echo BASEPLUGINS;?>images/page-logos/accept.png" alt="" width="15px" height="15px"> View All Parent Request</a></li>
 			</ul>
 		</li>
+		
 		<?php } ?>
-
+        <li><a href="<?php echo BASEPAGES; ?>approvals.php"><em class="fa fa-power-off">&nbsp;</em> Approvals</a></li>
 		<li><a href="<?php echo BASEURL; ?>admin/logout"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li>
 	</ul>
 </div>
