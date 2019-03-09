@@ -1,5 +1,5 @@
 <?php
-session_start();
+//session_start();
 require_once ('../../includes/bootstrap.php');
 require_once('../includes/header-bp.php');
 require_once('../includes/navigation.php');
@@ -92,9 +92,13 @@ file_put_contents("../../../assets/images/uploads/".$array[0]['child_id'].".".$a
 		<div class="panel-footer">
 			<a data-original-title="Broadcast Message" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary"><i class="glyphicon glyphicon-envelope"></i></a>
 			<span class="pull-right">
-				<form action="<?php echo BASEURL."views/admin/pages/submitChild.php";?>" method="post">
+				<form action="<?php echo BASEURL."views/admin/helper/request_child.php";?>" method="post">
 					<input name="child_id" value="<?php echo $array[0]['child_id'];?>" hidden>
-					<button type="submit" class="btn btn-primary" name="updateDetails">Update Details</button>
+                    <?php if($_SESSION['emp_role'] == 3){?>
+                    <button type="submit" class="btn btn-primary" name="requestChild">Request Adoption</button>
+                    <?php }else{?>
+                    <button type="submit" class="btn btn-primary" name="updateDetails">Update Details</button>
+                    <?php }?>
 				</form>
 
 			</span>
