@@ -37,11 +37,32 @@ require_once('../includes/breadcrumbs.php');
 
 
     <?php
-        $children = new Children($_SESSION['branch']);
 
+    $children = new Children($_SESSION['branch']);
+    $parent = new Parents($_SESSION['branch']);
+    if($_SESSION['emp_role']==3){
+
+        $result = $parent->getParent($_SESSION['emp_id']);
+
+        $result = iterator_to_array($result);
+
+        $rs = $children->getChildrenByGender($result[0]['perspective_parent_1']['gender']);
+
+        $array = iterator_to_array($rs);
+
+
+
+    }else{
         $rs = $children->getChildren();
 
         $array = iterator_to_array($rs);
+
+
+
+    }
+
+
+
 
 //        var_dump($array);
     ?>
