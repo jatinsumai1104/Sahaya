@@ -37,17 +37,39 @@ require_once('../includes/breadcrumbs.php');
 
 
     <?php
-        $children = new Children($_SESSION['branch']);
 
+    $children = new Children($_SESSION['branch']);
+    $parent = new Parents($_SESSION['branch']);
+    if($_SESSION['emp_role']==3){
+
+        $result = $parent->getParent($_SESSION['emp_id']);
+
+        $result = iterator_to_array($result);
+
+        $rs = $children->getChildrenByGender($result[0]['perspective_parent_1']['gender']);
+
+        $array = iterator_to_array($rs);
+
+
+
+    }else{
         $rs = $children->getChildren();
 
         $array = iterator_to_array($rs);
 
+
+
+    }
+
+
+
+
 //        var_dump($array);
     ?>
-<? for($i=0;$i<$children->getChildrenCount();$i++) {
+<? 
+    for($i=0;$i<$children->getChildrenCount();$i++) {
         file_put_contents("../../../assets/images/uploads/".$array[$i]['child_id'].".".$array[$i]['child_image']["image_extension"],$array[$i]['child_image']['image']);
-    ?>
+?>
     <form action="complete-child-detail.php" method="post">
         <div class="col-md-3 col-sm-6 col-xs-6">
             <div class="card">
