@@ -35,13 +35,13 @@ class Employee
         extract($array);
 
 		if($emp_password == $emp_confirm_password){
-//			if(($this->collection->countDocuments(["emp_email"=>$emp_email]))>0){
-//				return false;
-//			}
-//
-//			$emp_id = $branch . "_EMP_".($this->getEmployeeCount()+1);
-//
-//			$this->collection->insertOne(["emp_id"=>$emp_id,"emp_email"=>$emp_email,"emp_password"=>$emp_password,"branch_id"=>$branch]);
+			if(($this->collection->countDocuments(["emp_email"=>$emp_email]))>0){
+				return false;
+			}
+
+			$emp_id = $branch . "_EMP_".($this->getEmployeeCount()+1);
+
+			$this->collection->insertOne(["emp_id"=>$emp_id,"emp_email"=>$emp_email,"emp_password"=>$emp_password,"branch_id"=>$branch]);
 
 			$this->sendRegistrationMail($emp_email, $branch);
 		}
@@ -55,18 +55,8 @@ class Employee
     }
    
    public function checkEmployee($emp_email,$emp_password){
-
-//        echo $this->collection->countDocuments(["emp_email"=>$emp_email,"emp_password"=>$emp_password]);
-      if(($this->collection->countDocuments(["emp_email"=>$emp_email,"emp_password"=>$emp_password]))==1){
-
-          $rs = $this->collection->find(["emp_email"=>$emp_email,"emp_password"=>$emp_password]);
-          return $rs;
-      }
-      return null;
-
       $rs = $this->collection->find(array("emp_email"=>$emp_email,"emp_password"=>$emp_password));
       return $rs;
-
    }
 
     public function getEmployeeCount(){
@@ -118,7 +108,6 @@ class Employee
 	
     public function updateEmployee($emp_email,$formdata){
         extract($formdata);
-
        	$emp_role = 2;
 		$newdata=array('$set'=>array("emp_name"=>$emp_name,"emp_dob"=>$emp_dob,"emp_gender"=>$emp_dob,"emp_role"=>$emp_role,"emp_address"=>$emp_address,"emp_uid"=>$emp_uid,"emp_contact"=>$emp_contact,"emp_email"=>$emp_email,"emp_image"=>["image"=>$image_blob,"image_extension"=>$image_extension],"emp_document_details"=>["emp_documents"=>$document_blob,"document_extension"=>$document_extension]));
         $this->collection->updateOne(array("emp_email" => $emp_email), $newdata);
