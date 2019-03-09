@@ -46,4 +46,9 @@ class Branch
     public function getAdoptedChildrenInBranch($branch_id){
         $this->collection->updateOne(array("branch_id" => $branch_id), array('$set'=>["branch_adopted_children_count"=>(getBranchAdoptedChildrenCount($branch_id)+1)]));
     }
+
+
+    public function getBranch(){
+        return $this->collection->find();
+    }
 }

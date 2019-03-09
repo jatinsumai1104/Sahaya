@@ -2,7 +2,8 @@
 
 require_once("Database.class.php");
 
-class AdoptedChildrens{
+class AdoptedChildrens
+{
 	private $collection;
     private $collectionName="AdoptedChildrens";
 	private $db_name;

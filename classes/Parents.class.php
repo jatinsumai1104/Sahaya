@@ -161,7 +161,10 @@ class Parents
 
 
     }
-	
+
+
+
+
 	public function updateCurrent($data){
 		extract($data);
 		$newdata=array('$set'=>array("parent_user_name"=>$parent_username, "parent_password"=>$parent_password));
