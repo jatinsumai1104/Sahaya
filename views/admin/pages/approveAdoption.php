@@ -240,6 +240,13 @@ file_put_contents("../../../assets/images/uploads/".$parent[0]['parent_id'].".".
                     <input type="file" required name="child_consent_document">
                         <button type="submit" class="btn btn-primary" name="approveAdoption">Approve Adoption</button>
 				</form>
+                <form action="<?php echo BASEURL."views/admin/helper/adoptChild_routing.php";?>" method="post" enctype="multipart/form-data">
+					<input name="pending_approvals_id" value="<?php echo $pending_approvals_id;?>" hidden>
+                        <button type="submit" class="btn btn-primary" name="rejectApprove">Reject Adoption</button>
+				</form>
+
+
+
 			</span>
             </div>
         </div>

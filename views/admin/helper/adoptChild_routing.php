@@ -3,10 +3,10 @@
 session_start();
 
 require_once ("../../includes/bootstrap.php");
-
+$pending_approvals = new Pending_Approvals($_SESSION['branch']);
 if(isset($_POST['approveAdoption'])){
 
-    $pending_approvals = new Pending_Approvals($_SESSION['branch']);
+
 
     $adopted = new AdoptedChildrens($_SESSION['branch']);
 
@@ -36,6 +36,11 @@ if(isset($_POST['approveAdoption'])){
 
     $adopted->insertAdoptedChildren($data);
 
+}else{
+
+    if(isset($_POST['rejectApprove'])){
+        $pending_approvals->rejectApproval($_POST['pending_approvals_id']);
+    }
 }
 
 
