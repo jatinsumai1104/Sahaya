@@ -19,7 +19,7 @@ for($i = 0 ; $i < count($result) ; $i++) {
 //    echo $parent_name;
     $child_id = $result[$i]['child_id'];
     $child_name = $child->getChildName($child_id);
-}
+
 ?>
 <div class="row">
 	<h1 class="page-header">Pending Approvals</h1>
@@ -41,25 +41,13 @@ for($i = 0 ; $i < count($result) ; $i++) {
 
 			
 			<tr style="text-alig$pn: center;">
-				<th scope="row"><?php echo ($i);?></th>
+				<th scope="row"><?php echo ($i+1);?></th>
 				<td><?php  echo $parent_name;?></td>
 				<td><?php echo $child_name; ?></td>
 				<td>
-					<form action="../helper/parent_routing.php" method="post">
-						<input type="text" value="<?php echo $single_parents[$i]['parent_id']?>" hidden name="parent_id">
+					<form action="../helper/pending_approvals_routing.php" method="post">
+						<input type="text" value="<?php echo $result[$i]['pending_approvals_id'];?>" hidden name="Pending_approvals_id">
 						<button type="submit" class="btn btn-sm btn-info" name="view_parent">View</button>
-					</form>
-				</td>
-				<td>
-					<form action="../helper/parent_routing.php" method="post">
-						<input type="text" value="<?php echo $single_parents[$i]['parent_id']?>" hidden name="parent_id">
-						<button type="submit" class="btn btn-sm btn-success" name="approve_parent">Approve</button>
-					</form>
-				</td>
-				<td>
-					<form action="../helper/parent_routing.php" method="post">
-						<input type="text" value="<?php echo $single_parents[$i]['parent_id']?>" hidden name="parent_id">
-						<button type="submit" class="btn btn-sm btn-danger" name="reject_parent">Reject</button>
 					</form>
 				</td>
 			</tr>
@@ -68,5 +56,6 @@ for($i = 0 ; $i < count($result) ; $i++) {
 	</table>
 </div>
 <?php 
+}//for loop closing
     require_once('../includes/footer-bp.php');
 ?>
