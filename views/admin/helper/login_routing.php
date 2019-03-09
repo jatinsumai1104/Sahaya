@@ -11,8 +11,8 @@
 		$employee = new Employee($branch);
 		$_SESSION["db_name"] = $branch;
 		$rs=$employee->checkEmployee($emp_email,$emp_password);
-
-		if($rs == false){
+//        echo $rs;
+		if($rs == null){
 		  echo "Fuck u";
 		}
 		else{

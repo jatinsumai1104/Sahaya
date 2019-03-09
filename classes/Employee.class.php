@@ -55,11 +55,13 @@ class Employee
     }
    
    public function checkEmployee($emp_email,$emp_password){
-      if(($this->collection->countDocuments(["emp_email"=>$emp_email,"emp_password"=>$emp_password]))>1){
-         return false;
+//        echo $this->collection->countDocuments(["emp_email"=>$emp_email,"emp_password"=>$emp_password]);
+      if(($this->collection->countDocuments(["emp_email"=>$emp_email,"emp_password"=>$emp_password]))==1){
+
+          $rs = $this->collection->find(["emp_email"=>$emp_email,"emp_password"=>$emp_password]);
+          return $rs;
       }
-      $rs = $this->collection->find(["emp_email"=>$emp_email,"emp_password"=>$emp_password]);
-      return $rs;
+      return null;
    }
 
     public function getEmployeeCount(){
@@ -122,14 +124,10 @@ class Employee
 	
     public function updateEmployee($emp_email,$formdata){
         extract($formdata);
-<<<<<<< HEAD
-        $newdata=array('$set'=>array("emp_name"=>$emp_name,"emp_dob"=>$emp_dob,"emp_gender"=>$emp_dob,"emp_role"=>$emp_role,"emp_address"=>$emp_address,"emp_uid"=>$emp_uid,"emp_contact"=>$emp_contact,"emp_email"=>$emp_email,"emp_image"=>["image"=>$emp_image,"image_extension"=>$image_extension],"emp_document_details"=>["emp_documents"=>$emp_documents,"document_extension"=>$document_extension]));
-        $this->collection->updateOne(array("emp_id" => $emp_id), $newdata);
-=======
+
        	$emp_role = 2;
 		$newdata=array('$set'=>array("emp_name"=>$emp_name,"emp_dob"=>$emp_dob,"emp_gender"=>$emp_dob,"emp_role"=>$emp_role,"emp_address"=>$emp_address,"emp_uid"=>$emp_uid,"emp_contact"=>$emp_contact,"emp_email"=>$emp_email,"emp_image"=>["image"=>$image_blob,"image_extension"=>$image_extension],"emp_document_details"=>["emp_documents"=>$document_blob,"document_extension"=>$document_extension]));
         $this->collection->updateOne(array("emp_email" => $emp_email), $newdata);
->>>>>>> 9c0d8c0b060174ef2e40013649711efc852700e8
     }
 
 }

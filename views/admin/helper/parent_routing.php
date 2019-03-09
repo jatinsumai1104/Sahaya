@@ -56,7 +56,7 @@ if(isset($_POST['register_parent'])){
     }else{
         if(isset($_POST['reject_parent'])){
 
-            $parents = new Parents($_SESSION['db_name']);
+            $parents = new Parents($_SESSION['branch']);
 
             extract($_POST);
 
