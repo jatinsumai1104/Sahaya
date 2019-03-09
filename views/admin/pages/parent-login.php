@@ -2,6 +2,7 @@
 require_once ("../../includes/bootstrap.php");
 require_once('../includes/header-bp.php');
 $_SESSION['current_page'] = "Parent Login";
+$_SESSION['db_name'] = "DADAR";
 ?>
 
 <div class="row">
