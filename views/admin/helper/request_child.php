@@ -8,6 +8,7 @@ if(isset($_POST['requestChild'])){
     $pending=new Pending_Approvals($_SESSION['db_name']);
     $array = array("parent_id"=>$parent_id, "child_id"=>$child_id);
     $pending->insertPendingApproval($array);
-    echo "Child Inserted!";
+//    echo "Child Inserted!";
+    header("Location: ".BASEPAGES."childrens.php");
 }
 ?>
