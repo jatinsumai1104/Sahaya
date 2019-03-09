@@ -29,6 +29,16 @@ class Pending_Approvals
         }
     }
 
+    public function getPendingApprovalById($pending_approvals_id){
+        $res = $this->collection->find(["pending_approvals_id"=>$pending_approvals_id]);
+        if($res !=null){
+            return iterator_to_array($res);
+        }else{
+            echo "Invalid pending_Approval_id";
+        }
+
+    }
+
 
 
     public function  rejectApproval($pending_approvals_id){
