@@ -1,10 +1,7 @@
 <?php
 ob_start();
 session_start();
-require_once('../../includes/bootstrap.php');
-if(!isset($_SESSION['emp_id'])){
-	header("Location: ".BASEPAGES."login2.php");
-}	
+require_once('../../includes/bootstrap.php');	
 ?>
 <!DOCTYPE html>
 <html>
