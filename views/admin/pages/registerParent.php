@@ -20,7 +20,7 @@ require_once('../includes/breadcrumbs.php');
 							<select class="form-control" name="is_single_parent" id="is_single_parent" style="margin-bottom: 27px !important;">
 								<option disabled selected>Choose Your Marital Status</option>
 								<option value="0">Single</option>
-								<option value="1">Mingle</option>
+								<option value="1">Married</option>
 							</select>
 						</div>
 						<div class="form-group">

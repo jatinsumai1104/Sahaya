@@ -42,6 +42,6 @@
 		</li>
 		<?php } ?>
 
-		<li><a href="<?php echo BASEURL; ?>logout"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li>
+		<li><a href="<?php echo BASEURL; ?>admin/logout"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li>
 	</ul>
 </div>

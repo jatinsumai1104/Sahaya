@@ -28,7 +28,7 @@ $_SESSION['current_page'] = 'login';
 
 	<div class="grid">
 
-		<form action="../helper/login_routing.php" method="POST" class="form login">
+		<form action="<?php echo BASEURL;?>views/admin/helper/login_routing.php" method="POST" class="form login">
             
 <!--
             <div class="form__field">

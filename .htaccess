@@ -1,5 +1,6 @@
 RewriteEngine On
-#RewriteRule ^admin/login$ views/admin/pages/login2.php
+RewriteRule ^admin/login$ views/admin/pages/login2.php
+RewriteRule ^admin/logout$ views/admin/helper/login_routing.php?logout=1
 #RewriteRule ^admin/sign_up_page$ views/admin/pages/signUp.php
 #RewriteRule ^admin/childrens$ views/admin/pages/childrens.php
 #RewriteRule ^admin/submit_child$ views/admin/pages/submitChild.php

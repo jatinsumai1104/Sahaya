@@ -1,5 +1,6 @@
 <?php 
 require_once('../includes/header-bp.php');
+$_SESSION['current_page'] = "Dashboard";
 require_once('../includes/navigation.php');
 require_once('../includes/sidebar.php');
 require_once('../includes/breadcrumbs.php');

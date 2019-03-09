@@ -1,4 +1,11 @@
-<?php require_once('../../includes/bootstrap.php');?>
+
+<?php
+
+if(!isset($_SESSION['emp_id'])){
+	header("Location: ".BASEPAGES."login2.php");
+}
+require_once('../../includes/bootstrap.php');
+?>
 <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
 	<div class="container-fluid">
 		<div class="navbar-header">
