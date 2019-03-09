@@ -39,7 +39,6 @@ class Pending_Approvals
     }
 
 
-
     public function  rejectApproval($pending_approvals_id){
         $array = ['$set'=>["status"=>"Rejected","deleted"=>1]];
 
@@ -58,15 +57,10 @@ class Pending_Approvals
 
     }
 
-
     public function getData(){
         $res = iterator_to_array($this->collection->find(["deleted"=>0]));
         return $res;
     }
-
-
-
-
 
     public function getCount(){
         return $this->collection->countDocuments();
