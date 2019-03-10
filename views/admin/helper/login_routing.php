@@ -12,15 +12,16 @@
 		$_SESSION["db_name"] = $branch;
 		$rs=$employee->checkEmployee($emp_email,$emp_password);
 		$array = iterator_to_array($rs);
+		$basepage = BASEPAGES;
 		if(count($array) != 1){
-		  echo "Invalid Login Credentials";
+	  		$_SESSION['status'] = "Login_Failure";
+			header("Location: {$basepage}login2.php");
 		}
 		else{
 			$_SESSION['emp_id'] = $array[0]['emp_id'];
 			$_SESSION['emp_role'] = $array[0]['emp_role'];
 			$_SESSION['emp_name'] = $array[0]['emp_name'];
 			$_SESSION['branch'] = $branch;
-			$basepage = BASEPAGES;
 			header("Location: {$basepage}dashboard.php");
 		}
 
