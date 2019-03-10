@@ -12,6 +12,7 @@
 		$_SESSION["db_name"] = $branch;
 		$rs=$employee->checkEmployee($emp_email,$emp_password);
 		$array = iterator_to_array($rs);
+		$basepage = BASEPAGES;
 		if(count($array) != 1){
 		    $_SESSION["emp_login_status"]=LOGINFAILURE;
             $basepage = BASEPAGES;
@@ -22,7 +23,6 @@
 			$_SESSION['emp_role'] = $array[0]['emp_role'];
 			$_SESSION['emp_name'] = $array[0]['emp_name'];
 			$_SESSION['branch'] = $branch;
-			$basepage = BASEPAGES;
 			header("Location: {$basepage}dashboard.php");
 		}
 
