@@ -1,3 +1,4 @@
+
 <?php
 
 session_start();
@@ -38,11 +39,12 @@ if(isset($_POST['approveAdoption'])){
 
 }else{
 
-    if(isset($_POST['rejectApprove'])){
-        $pending_approvals->rejectApproval($_POST['pending_approvals_id']);
-    }
+//    if(isset($_POST['rejectApprove'])){
+//        $pending_approvals->rejectApproval($_POST['pending_approvals_id']);
+//    }
 }
-
-
+//The application which was accepted or rejected needs to be removed from table
+$basePage= BASEPAGES;
+header("Location: {$basePage}approvals.php")
 
 ?>

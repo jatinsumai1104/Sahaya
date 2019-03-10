@@ -16,11 +16,12 @@ $parent = iterator_to_array($parent_obj->getParent($array[0]['parent_id']));
 $array = iterator_to_array($child_obj->getChild($array[0]['child_id']));
 
 file_put_contents("../../../assets/images/uploads/".$array[0]['child_id'].".".$array[0]['child_image']["image_extension"],$array[0]['child_image']['image']);
-file_put_contents("../../../assets/images/uploads/".$array[0]['child_id'].".".$array[0]['child_image']["image_extension"],$array[0]['child_image']['image']);
 file_put_contents("../../../assets/images/uploads/".$array[0]['child_id'].".".$array[0]['personal_documents']["document_extension"],$array[0]['personal_documents']['personal_documents']);
-file_put_contents("../../../assets/images/uploads/".$array[0]['child_id'].".".$array[0]['child_image']["image_extension"],$array[0]['child_image']['image']);
-file_put_contents("../../../assets/images/uploads/".$parent[0]['parent_id'].".".$array[0]['personal_documents']["document_extension"],$array[0]['personal_documents']['personal_documents']);
 
+file_put_contents("../../../assets/images/uploads/".$parent[0]['parent_id'].".".$parent[0]['perspective_parent_1']["parent_document"]["document_extension"],$parent[0]['perspective_parent_1']["parent_document"]["parent_document"]);
+if($parent[0]['is_single_parent']!='0'){
+    file_put_contents("../../../assets/images/uploads/".$parent[0]['parent_id'].".".$parent[0]['perspective_parent_2']["parent_document"]["document_extension"],$parent[0]['perspective_parent_2']["parent_document"]["parent_document"]);
+}
 ?>
     <div class="row">
         <div class="panel panel-info <?php if($parent[0]['is_single_parent']=='0'){ echo "";}else { echo "row";}?>">
@@ -232,22 +233,22 @@ file_put_contents("../../../assets/images/uploads/".$parent[0]['parent_id'].".".
                 </div>
             </div>
 
-            <div class="panel-footer">
-                <a data-original-title="Broadcast Message" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary"><i class="glyphicon glyphicon-envelope"></i></a>
-                <span class="pull-right">
+            <div class="panel-footer row">
 				<form action="<?php echo BASEURL."views/admin/helper/adoptChild_routing.php";?>" method="post" enctype="multipart/form-data">
 					<input name="pending_approvals_id" value="<?php echo $pending_approvals_id;?>" hidden>
-                    <input type="file" required name="child_consent_document">
-                        <button type="submit" class="btn btn-primary" name="approveAdoption">Approve Adoption</button>
-				</form>
-                <form action="<?php echo BASEURL."views/admin/helper/adoptChild_routing.php";?>" method="post" enctype="multipart/form-data">
+                    <div class="col-md-12 ">
+                        <label  class="pull-left">Child Consent Documents</label>
+                        <input type="file" class="pull-right" required name="child_consent_document">
+                    </div>
+                    <div class="col-md-12">
+                        <button type="submit" class="btn btn-primary pull-right" name="approveAdoption">Approve Adoption</button>
+                     <button type="submit" class="btn btn-danger " name="rejectApprove">Reject Adoption</button>
+                    </div>
+                </form>
+                    <form action="<?php echo BASEURL."views/admin/helper/adoptChild_routing.php";?>" method="post" enctype="multipart/form-data">
 					<input name="pending_approvals_id" value="<?php echo $pending_approvals_id;?>" hidden>
-                        <button type="submit" class="btn btn-primary" name="rejectApprove">Reject Adoption</button>
+
 				</form>
-
-
-
-			</span>
             </div>
         </div>
     </div>
