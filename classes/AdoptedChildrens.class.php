@@ -42,5 +42,9 @@ class AdoptedChildrens
 	public function getAdoptedChild($adopted_child_id){
        $rs = $this->collection->find(["adopted_child_id"=>$adopted_child_id]);
 	}
+    public function getChildByParentId($parent_id){
+        return $this->collection->findOne(["parent_id"=>$parent_id]);
+    }
+
 }
 ?>

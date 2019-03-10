@@ -45,7 +45,7 @@
             <li><a href="<?php echo BASEPAGES; ?>approvals.php"><em class="fa fa-clock-o">&nbsp;</em> Approvals</a></li>
         <?php } ?>
         <?php if($_SESSION['emp_role'] == 3){?>
-            <li><a href="<?php echo BASEPAGES; ?>childImageByParent.php"><em class="fa fa-handshake-o">&nbsp;</em> Upload Child Image</a></li>
+            <li><a href="<?php echo BASEPAGES; ?>childImageVerification.php"><em class="fa fa-handshake-o">&nbsp;</em> Upload Child Image</a></li>
         <?php } ?>
 
         <li><a href="<?php echo BASEURL; ?>admin/logout"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li>

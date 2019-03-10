@@ -7,5 +7,6 @@ require_once('../../../classes/Employee.class.php');
 require_once('../../../classes/Branch.class.php');
 require_once('../../../classes/AdoptedChildrens.class.php');
 require_once('../../../classes/Pending_Approvals.class.php');
+require_once('../../../classes/Detection.class.php');
 
 ?>

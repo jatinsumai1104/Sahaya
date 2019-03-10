@@ -26,8 +26,8 @@ class Mailer{
 		$this->mail->AddEmbeddedImage("../assets/images/logo.png", "logo", "logo.png", 'base64', 'image/png');
 		$this->mail->AddEmbeddedImage('../assets/images/mail-logo.png', 'mail-logo', 'mail-logo.png', 'base64', 'image/png');
         $this->mail->Body = $body;
-		
-		
+
+
         $this->mail->AddAddress("$user_mail");
 
         if (!$this->mail->Send()) {
@@ -37,6 +37,6 @@ class Mailer{
         }
 
     }//end of func
-	
+
 }//end of class
 ?>
