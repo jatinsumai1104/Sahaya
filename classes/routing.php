@@ -8,8 +8,9 @@
 
 require_once ("Children.class.php");
 require_once ("Pending_Approvals.class.php");
-$child_obj = (new Children("DADAR"))->calculateChildAge("DADAR_CHD_1");
-(new Pending_Approvals("DADAR"))->insertPendingApproval(["abc"=>1,"def"=>2]);
+array_map( 'unlink', glob("../assets/documents/*.pdf"));
+echo "all pdfs deleted";
+
 //$parents = new Parents();
 
 //if(isset($_POST['child_submit'])){

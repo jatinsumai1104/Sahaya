@@ -19,9 +19,9 @@ class Mailer{
 
     public  function send_mail($user_mail,$body,$subject){
 		// a new mail id is needed
-        $this->mail->Username = "handlesquizlikeaboss@gmail.com";
-        $this->mail->Password = "quizhandlers123";
-        $this->mail->SetFrom("handlesquizlikeaboss@gmail.com", "Sahaya");
+        $this->mail->Username = "projectuser66@gmail.com";
+        $this->mail->Password = "abcd@1234";
+        $this->mail->SetFrom("projectuser66@gmail.com", "Sahaya");
         $this->mail->Subject = $subject;
 		$this->mail->AddEmbeddedImage("../assets/images/logo.png", "logo", "logo.png", 'base64', 'image/png');
 		$this->mail->AddEmbeddedImage('../assets/images/mail-logo.png', 'mail-logo', 'mail-logo.png', 'base64', 'image/png');

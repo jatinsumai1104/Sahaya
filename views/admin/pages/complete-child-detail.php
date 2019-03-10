@@ -13,7 +13,7 @@ $array = iterator_to_array($children->getChild($_POST['child_id']));
 
 
 file_put_contents("../../../assets/images/uploads/".$array[0]['child_id'].".".$array[0]['child_image']["image_extension"],$array[0]['child_image']['image']);
-file_put_contents("../../../assets/images/uploads/".$array[0]['child_id'].".".$array[0]['personal_documents']["document_extension"],$array[0]['personal_documents']['personal_documents']);
+file_put_contents("../../../assets/documents/".$array[0]['child_id'].".".$array[0]['personal_documents']["document_extension"],$array[0]['personal_documents']['personal_documents']);
 ?>
 <div class="row">
 	<div class="panel panel-info">
