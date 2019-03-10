@@ -63,7 +63,7 @@ require_once('../includes/breadcrumbs.php');
     <form action="complete-child-detail.php" method="post">
         <div class="col-md-3 col-sm-6 col-xs-6">
             <div class="card">
-                <img src="../../../assets/images/uploads/<?php echo $array[$i]['child_id'].".".$array[$i]['child_image']["image_extension"] ;?>" class="img-responsive" alt="?php echo $array[$i]["child_name"];?>" width="250px;" height="200px;">
+                <img src="../../../assets/images/uploads/<?php echo $array[$i]['child_id'].".".$array[$i]['child_image']["image_extension"] ;?>" class="img-responsive" alt="<?php echo $array[$i]["child_name"];?>" width="300px;" height="210px;">
                 <h1>
                     <?php echo $array[$i]["child_name"];?>
                 </h1>

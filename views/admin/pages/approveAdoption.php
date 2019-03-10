@@ -15,13 +15,17 @@ $array = iterator_to_array($pending_approvals_obj->getPendingApprovalById($pendi
 $parent = iterator_to_array($parent_obj->getParent($array[0]['parent_id']));
 $array = iterator_to_array($child_obj->getChild($array[0]['child_id']));
 
-file_put_contents("../../../assets/images/uploads/".$array[0]['child_id'].".".$array[0]['child_image']["image_extension"],$array[0]['child_image']['image']);
-file_put_contents("../../../assets/images/uploads/".$array[0]['child_id'].".".$array[0]['personal_documents']["document_extension"],$array[0]['personal_documents']['personal_documents']);
 
-file_put_contents("../../../assets/images/uploads/".$parent[0]['parent_id'].".".$parent[0]['perspective_parent_1']["parent_document"]["document_extension"],$parent[0]['perspective_parent_1']["parent_document"]["parent_document"]);
+
+file_put_contents("../../../assets/images/uploads/".$array[0]['child_id'].".".$array[0]['child_image']["image_extension"],$array[0]['child_image']['image']);
+file_put_contents("../../../assets/documents/".$array[0]['child_id'].".".$array[0]['personal_documents']["document_extension"],$array[0]['personal_documents']['personal_documents']);
+
+file_put_contents("../../../assets/documents/".$parent[0]['parent_id']."_perspective_parent_1.".$parent[0]['perspective_parent_1']["parent_document"]["document_extension"],$parent[0]['perspective_parent_1']["parent_document"]["parent_document"]);
 if($parent[0]['is_single_parent']!='0'){
-    file_put_contents("../../../assets/images/uploads/".$parent[0]['parent_id'].".".$parent[0]['perspective_parent_2']["parent_document"]["document_extension"],$parent[0]['perspective_parent_2']["parent_document"]["parent_document"]);
+    file_put_contents("../../../assets/documents/".$parent[0]['parent_id']."_perspective_parent_2.".$parent[0]['perspective_parent_2']["parent_document"]["document_extension"],$parent[0]['perspective_parent_2']["parent_document"]["parent_document"]);
+
 }
+
 ?>
     <div class="row">
         <div class="panel panel-info <?php if($parent[0]['is_single_parent']=='0'){ echo "";}else { echo "row";}?>">
@@ -37,7 +41,7 @@ if($parent[0]['is_single_parent']!='0'){
             <?php echo $parent[0]['perspective_parent_1']['parent_name']?>
         </h1>
     </div>
-    <div class="panel-heading col-md-offset-2 col-md-5">
+    <div class="panel-heading col-md-5 col-md-offset-1">
         <h1 class="panel-title" style="font-size: 22px;">
             <?php echo $parent[0]['perspective_parent_2']['parent_name']?>
         </h1>
@@ -70,7 +74,7 @@ if($parent[0]['is_single_parent']!='0'){
                             </tr>
                             <tr>
                                 <td>View Documents</td>
-                                <td><a class="btn btn-md btn-info" type="button" href="../../../assets/documents/<?php echo $parent[0]['parent_id'].".".$parent[0]['perspective_parent_1']['parent_document']['document_extension'];?>">Click Me</a> </td> </tr> <tr>
+                                <td><a class="btn btn-md btn-info" type="button" href="../../../assets/documents/<?php echo $parent[0]['parent_id']."_perspective_parent_1.".$parent[0]['perspective_parent_1']['parent_document']['document_extension'];?>">Click Me</a> </td> </tr> <tr>
                                 <td>
                                     Verified
                                 </td>
@@ -108,7 +112,7 @@ if($parent[0]['is_single_parent']!='0'){
                 </tr>
                 <tr>
                     <td>View Documents</td>
-                    <td><a class="btn btn-md btn-info" type="button" href="../../../assets/documents/<?php echo $parent[0]['parent_id'].".".$parent[0]['perspective_parent_2']['parent_document']['document_extension'];?>">Click Me</a> </td> </tr> <tr>
+                    <td><a class="btn btn-md btn-info" type="button" href="../../../assets/documents/<?php echo $parent[0]['parent_id']."_perspective_parent_1.".$parent[0]['perspective_parent_1']['parent_document']['document_extension'];?>">Click Me</a> </td> </tr> <tr>
                     <td>
                         Verified
                     </td>
@@ -119,7 +123,7 @@ if($parent[0]['is_single_parent']!='0'){
                 </tbody>
             </table>
         </div>
-        <div class=" col-md-5 col-lg-5 ">
+        <div class=" col-md-5 col-md-offset-1 col-lg-5 ">
             <table class="table table-user-information">
                 <tbody>
                 <tr>
@@ -143,7 +147,7 @@ if($parent[0]['is_single_parent']!='0'){
                 </tr>
                 <tr>
                     <td>View Documents</td>
-                    <td><a class="btn btn-md btn-info" type="button" href="../../../assets/documents/<?php echo $parent[0]['parent_id'].".".$parent[0]['perspective_parent_1']['parent_document']['document_extension'];?>">Click Me</a> </td> </tr> <tr>
+                    <td><a class="btn btn-md btn-info" type="button" href="../../../assets/documents/<?php echo $parent[0]['parent_id']."_perspective_parent_2.".$parent[0]['perspective_parent_2']['parent_document']['document_extension'];?>">Click Me</a> </td> </tr> <tr>
                     <td>
                         Verified
                     </td>

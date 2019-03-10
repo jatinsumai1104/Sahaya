@@ -31,7 +31,7 @@ class Pending_Approvals
     public function insertPendingApproval($array){
         extract($array);
 
-        $pending_approvals_id = $this->getCount();
+        $pending_approvals_id = ($this->getCount())+1;
         $res=$this->collection->countDocuments(["parent_id"=>$parent_id, "child_id"=>$child_id]);
         if($res == 0){
             $this->collection->insertOne(["pending_approvals_id"=>"$pending_approvals_id","parent_id"=>$parent_id,"child_id"=>$child_id,"status"=>"Pending","deleted"=>'0' , "applied_on" => date("Y-m-d H:i:s")]);
