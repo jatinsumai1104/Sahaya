@@ -11,7 +11,6 @@
 						<a href="<?php echo BASELANDING;?>pages/index.php">Home</a>
 					</li>
 					<li class="active"><a href="<?php echo BASELANDING;?>pages/about.php">About</a></li>
-					<li class="active"><a href="<?php echo BASELANDING;?>pages/blog.php">Blog</a></li>
 					<li class="active"><a href="<?php echo BASELANDING;?>pages/contact.php">Contact</a></li>
 					<li><a class="btn btn-primary" href="<?php echo BASEPAGES;?>parent-login.php" style="margin-right: 10px;">Login</a></li>
 					<li><a class="btn btn-primary" href="<?php echo BASEURL;?>admin/login">Employee Login</a></li>

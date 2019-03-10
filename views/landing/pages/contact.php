@@ -2,7 +2,7 @@
 <?php require_once('../includes/nav.php');?>
 <div class="fh5co-hero">
 	<div class="fh5co-overlay"></div>
-	<div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(<?php echo BASEPLUGINS;?>landing/images/cover_bg_2.jpg);">
+	<div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(<?php echo BASEPLUGINS;?>images/landing/background.jpg);">
 		<div class="desc animate-box">
 			<h2><strong>Contact</strong> Us</h2>
 			<span>HandCrafted by <a href="http://frehtml5.co/" target="_blank" class="fh5co-site-name">FreeHTML5.co</a></span>
@@ -54,7 +54,5 @@
 		</form>
 	</div>
 </div>
-<!-- END fh5co-contact -->
-<div id="map" class="fh5co-map"></div>
 <!-- END map -->
 <?php require_once('../includes/footer.php');?>

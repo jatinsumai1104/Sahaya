@@ -58,19 +58,4 @@
 	<div id="fh5co-wrapper">
 		<div id="fh5co-page">
 			<!-- forum Bar-->
-			<div class="header-top">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-12 col-sm-6 text-center fh5co-social" style="color: white;">
-							Made with &hearts; by <a href="https://www.medialoot.com" style="color: #111;font-size: 16px;">Sahaya Foundation</a>
-						</div>
-<!--
-						<div class="col-md-6 col-sm-6 text-right fh5co-social">
-							<a href="#" class="grow"><i class="icon-facebook2"></i></a>
-							<a href="#" class="grow"><i class="icon-twitter2"></i></a>
-							<a href="#" class="grow"><i class="icon-instagram2"></i></a>
-						</div>
--->
-					</div>
-				</div>
-			</div>
+			
