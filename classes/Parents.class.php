@@ -80,15 +80,12 @@ class Parents
     public function calculateParentAge($parent_id){
         $rs = $this->getParent($parent_id);
         $array = iterator_to_array($rs);
-
         $dob = $array[0][""];
-
-        $year =  explode("-",$dob)[0];
-
-        $current_year = date("Y");
-
-        $age =  $current_year - $year;
-
+        $current_date = date("Y-m-d");
+        $sdate = new DateTime($dob);
+        $edate = new DateTime($current_date);
+        $interval = $sdate->diff($edate);
+        $age = $interval->y;
         return $age;
 
     }
