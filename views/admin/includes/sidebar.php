@@ -27,7 +27,9 @@
 			<ul class="children collapse" id="sub-item-1">
 				<li class="<?php if($_SESSION['current_page'] == "viewChilds") { echo "active" ; }else{ echo "" ; } ?>">
 					<a href="<?php echo BASEPAGES; ?>childrens.php"><em class="fa fa-child">&nbsp;</em> Show Children</a></li>
+				<?php if($_SESSION['emp_role'] <= 2){?>
 				<li class="<?php if($_SESSION['current_page'] == "submitChild") { echo "active" ; }else{ echo "" ; } ?>"><a href="<?php echo BASEPAGES; ?>submitChild.php"><em class="fa fa-handshake-o">&nbsp;</em> Register Child</a></li>
+				<?php } ?>
 			</ul>
 		</li>
 		<?php if($_SESSION['emp_role'] <= 2){?>
@@ -40,9 +42,9 @@
 				<li class="<?php if($_SESSION['current_page'] == "dashboard") { echo "active" ; }else{ echo "" ; } ?>"><a href="<?php echo BASEPAGES; ?>parents.php"><img src="<?php echo BASEPLUGINS;?>images/page-logos/accept.png" alt="" width="15px" height="15px"> View All Parent Request</a></li>
 			</ul>
 		</li>
-		
+		<li><a href="<?php echo BASEPAGES; ?>approvals.php"><em class="fa fa-clock-o">&nbsp;</em> Approvals</a></li>
 		<?php } ?>
-        <li><a href="<?php echo BASEPAGES; ?>approvals.php"><em class="fa fa-power-off">&nbsp;</em> Approvals</a></li>
+        
 		<li><a href="<?php echo BASEURL; ?>admin/logout"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li>
 	</ul>
 </div>
