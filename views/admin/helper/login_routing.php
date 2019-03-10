@@ -13,7 +13,9 @@
 		$rs=$employee->checkEmployee($emp_email,$emp_password);
 		$array = iterator_to_array($rs);
 		if(count($array) != 1){
-		  echo "Invalid Login Credentials";
+		    $_SESSION["emp_login_status"]=LOGINFAILURE;
+            $basepage = BASEPAGES;
+		    header("Location: {$basepage}login2.php");
 		}
 		else{
 			$_SESSION['emp_id'] = $array[0]['emp_id'];
@@ -76,7 +78,9 @@
 		$array = $parent->getParentByEmail($_REQUEST['parent_username'], $_REQUEST['parent_password']);
 		$rs = iterator_to_array($array);
 		if(count($rs)!=1){
-			echo "Invalid Credentials";
+            $basepage = BASEPAGES;
+            $_SESSION["parent_login_status"]=LOGINFAILURE;
+            header("Location: {$basepage}parent-login.php");
 		}else{
 			$_SESSION['emp_id'] = $rs[0]['parent_id'];
 			$_SESSION['emp_role'] = 3;

@@ -1,17 +1,9 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Hp
- * Date: 03-03-2019
- * Time: 07:30 PM
- */
-
 session_start();
 require_once ("../../includes/bootstrap.php");
 require_once ("../../includes/constants.php");
 if(isset($_POST["register_child"])){
     extract($_POST);
-//echo"hello";
     $child_image = "";
     $image_extension = "";
     $personal_documents = "";
