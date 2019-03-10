@@ -19,18 +19,17 @@ $_SESSION['current_page'] = 'login';
 </head>
 
 <body class="align">
-
 	<div class="row">
 		<div class="col-md-3">
-			<p style="color: white;"><span><img src="<?php echo BASEPLUGINS;?>images/logo.png" alt="" width="75px" height="75px"> SAHAYA</span> - THE CHILD ADOPTION</p>
+			<p style="cursor: pointer;"><a style="color: white;text-decoration:none;" href="<?php echo BASELANDING;?>pages/index.php"><span><img src="<?php echo BASEPLUGINS;?>images/logo.png" alt="" width="75px" height="75px"> SAHAYA</span> - THE CHILD ADOPTION</a></p>
 		</div>
 	</div>
 
 	<div class="grid">
 
 		<form action="<?php echo BASEURL;?>views/admin/helper/login_routing.php" method="POST" class="form login">
-            
-<!--
+
+			<!--
             <div class="form__field">
                <select class="form-control" name="branch">
                  <option value="" disabled>Select Your Location</option>
@@ -38,7 +37,7 @@ $_SESSION['current_page'] = 'login';
 			   </select>
             </div>
 -->
-            <div class="form__field">
+			<div class="form__field">
 				<label><svg class="icon">
 						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#user"></use>
 					</svg><span class="hidden">Select Your Location</span></label>
@@ -46,7 +45,7 @@ $_SESSION['current_page'] = 'login';
 					<option class="form__input" value="DADAR">Dadar</option>
 					<option class="form__input" value="KURLA">Kurla</option>
 				</select>
-<!--				<input id="signup_email" type="text" name="signup_email" class="form__input" placeholder="Email Address" required>-->
+				<!--				<input id="signup_email" type="text" name="signup_email" class="form__input" placeholder="Email Address" required>-->
 			</div>
 			<div class="form__field">
 				<label for="employee_username"><svg class="icon">
