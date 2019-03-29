@@ -77,6 +77,9 @@ class Parents
         return $rs;
     }
 
+	public function getAllParents(){
+		return $this->collection->find();
+	}
     public function calculateParentAge($parent_id){
         $rs = $this->getParent($parent_id);
         $array = iterator_to_array($rs);
@@ -130,10 +133,7 @@ class Parents
         $this->collection->updateOne(array("parent_id" => $parent_id), $newdata);
     }
 
-
-
     public function sendApprovalMail($email, $parent_id){
-//		$ciphertext_email= $this->encryption->encrypt($email);
         require_once('Mailer.php');
         $mailer = new Mailer();
         $user_email = "$email";
@@ -141,8 +141,10 @@ class Parents
 		$username = explode("@", $email)[0];
         $subject = "Sahaya Approval Confirmation";
 		$base_url_link = "http://localhost/Sahaya/views/admin/pages/parent-sign-up-page.php?email=$email&branch={$branch}&id={$parent_id}";
-
-        $body = "<div><table border='0' cellpadding='0' cellspacing='0' height='100%' style='font-family:&quot;Arial&quot;' width='100%'><tbody><tr><td align='center' valign='top'><table border='0' cellpadding='0' cellspacing='0' style='font-family:&quot;Arial&quot;;border:1px solid #ecedee' width='600'><tbody><tr><td align='center' valign='top'><table border='0' cellpadding='0' cellspacing='0' height='50' style='font-family:&quot;Arial&quot;;font-size:13px;padding:20px 40px 0 40px' width='100%'><tbody><tr><td align='center' style='margin:0;padding:0' valign='middle'><a href='http://localhost/Sahaya/views/admin/pages/login2.php' style='text-decoration:none;color:#222;font-size: 20px;'> Sahaya Foundation <img alt='Sahaya FOundation' height='30' src='http://localhost/Sahaya/assets/images/logo.png' style='width:30px;height:30px' width='30'></a></td></tr></tbody></table></td></tr><tr><td align='center' valign='top'><table border='0' cellpadding='0' cellspacing='0' style='font-family:&quot;Arial&quot;;background-color:#fff;font-size:14px;color:#46535e;border-radius:3px;padding-top:30px' width='100%'><tbody><tr><td align='left' valign='top'><div style='color:#fff;background-image:url(https://ci5.googleusercontent.com/proxy/HCXBN17Mw8b7GgEiF5k8bt56EMh5Q5WbYnIlta8fUehYfGpB4f79NphBAC6SC2py6927R3rcCLbGOc2MrQ0EgT4m-nKWg_HzlYWf13P36_ZvMGq24I82pvoD9JVbM2r494vwZyW800n9YuvFT6gsNA=s0-d-e1-ft#https://static-fastly.hackerearth.com/static/emails/images/practice/practice_intro_header.png);padding:48px 20px 48px 20px;text-align:center;font-size:30px;margin:0 0 24px 0'><span style='font-size:14px;line-height:2'>{$username}, are you helping for Good?</span><span style='display:block;font-size:24px;margin:10px 0 0 0'>LET`S HELP TOGETHER TODAY</span></div><div style='margin:0 30px 36px 30px'><span style='display:block;margin:0 0 18px 0;font-size:14px;line-height:2'>You joined Sahaya Foundation with a goal to be a better person.We aim to provide you with all the resources to achieve your goal.</span><div style='margin:0 auto;display:table'><a style='font-size:14px;border-radius:3px;display:inline-block;text-decoration:none;color:#fff;text-align:center;padding:15px 20px;width:180px;background-color:#f60' href='{$base_url_link}'>Activate your account</a></div></div><div style='line-height:2;margin:30px 0 18px 30px;color:#b2b2b2'><div>Regards,</div><div>Team Sahaya</div></div></td></tr></tbody></table></td></tr><tr><td align='center' valign='top'><table border='0' cellpadding='0' cellspacing='0' style='font-family:&quot;Arial&quot;;font-size:12px;color:#666;padding-top:30px' width='100%'><tbody><tr><td align='left' style='padding:0 20px;font-size:12px;color:#90979e' valign='top'>This email was sent to you because you are subscribed / Requested for recommendation related to help orphans on Sahaya Foundation</td></tr><tr><td><a href='http://localhost/Sahaya/views/admin/pages/login2.php'><img height='auto' src='http://localhost/Sahaya/assets/images/mail-logo.png' style='width:100%;height:auto' width='100%' class='CToWUd'></a></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table></div>";
+		$button = "Activate your account";
+		$desc = "This email was sent to you because you are subscribed / Requested for recommendation related to help orphans on Sahaya Foundation";
+        
+		$body = $mailer->getMailBody($username, $base_url_link, $button, $desc);
 
         $boolean=$mailer->send_mail($user_email, $body, $subject);
         if($boolean){
@@ -153,44 +155,36 @@ class Parents
             $_SESSION['status']="FAILUREMAIL";
             header("Location: ../pages/parents.php");
         }
-
-
     }
-
 
     public function mailImageUpload($parent_id){
         require_once('Mailer.php');
         $mailer = new Mailer();
 
-        $subject = "";
+        $subject = "No Image Updated";
 
         $par = iterator_to_array($this->getParent($parent_id));
 
         if($par[0]['is_single_parent'] == '0'){
             $email = $par[0]['perspective_parent_1']['email'];
-            $boolean=$mailer->send_mail($email, "<HTML>fk</HTML>", $subject);
+            $boolean=$mailer->send_mail($email, $body = $mailer->getMailBody($email, "http://localhost/Sahaya/views/admin/pages/parent-login.php", "Upload Image", "You haven't uploaded your Child photo and the date is very close to 1 year"), $subject);
 
         }
         else{
             $email =$par[0]['perspective_parent_1']['email'];
-            $boolean=$mailer->send_mail($email, "<HTML>fk</HTML>", $subject);
+            $boolean=$mailer->send_mail($email, $body = $mailer->getMailBody($email, "http://localhost/Sahaya/views/admin/pages/parent-login.php", "Upload Image", "You haven't uploaded your Child photo and the date is very close to 1 year"), $subject);
             $email =$par[0]['perspective_parent_2']['email'];
-            $boolean=$mailer->send_mail($email, "<HTML>fk</HTML>", $subject);
+            $boolean=$mailer->send_mail($email, $body = $mailer->getMailBody($email, "http://localhost/Sahaya/views/admin/pages/parent-login.php", "Upload Image", "You haven't uploaded your Child photo and the date is very close to 1 year"), $subject);
         }
 
 
     }
-
-
 
 	public function updateCurrent($data){
 		extract($data);
 		$newdata=array('$set'=>array("parent_user_name"=>$parent_username, "parent_password"=>$parent_password));
         if($this->collection->updateOne(array("parent_id" => $parent_id), $newdata)){
 			echo "Parent successfully updated";
-			//session of parent needs to be created
-//			$baseurl = BASEPAGES;
-//			header("Location: {$baseurl}dashboard.php");	
 		}else{
 			echo "Something is wrong";
 		}

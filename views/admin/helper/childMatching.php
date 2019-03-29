@@ -10,46 +10,37 @@
 
 session_start();
    if(isset($_POST['child_submit'])){
-
-
-
-
-
-       $parent = new Parents($_SESSION['branch']);
+       
+	   $parent = new Parents($_SESSION['branch']);
        $adopted = new AdoptedChildrens($_SESSION['branch']);
-
-
+	   
        $children = new Children($_SESSION['branch']);
-
-
-//       var_dump($_SESSION);
-       $result = $adopted->getChildByParentId($_SESSION['emp_id']);
-       $file = realpath("../../../assets/images/uploads/".$result['child_id'].".");
-
-
-
-
-       file_put_contents("../../../assets/images/uploads/".$result['child_id'].".".$result['child_image']["image_extension"],$result['child_image']['image']);
-
-
-
-////      var_dump($result);
-//       file_put_contents(realpath("../../../assets/images/uploads/TEMP_".$result['child_id'].".".$result['child_image']["image_extension"]),$_FILES['child_image']['tmp_name']);
-//       $file2 = realpath("../../../assets/images/uploads/TEMP_".$result['child_id'].".".$result['child_image']["image_extension"]);
-//       $file2 = file_get_contents(realpath("../../../assets/images/uploads/".$result['child_id'].".".$result['child_image']["image_extension"]));
-
-
-       $file2 = file_get_contents($_FILES['child_image']['tmp_name']);
-      file_put_contents("../../../assets/images/uploads/TEMP_".$result['child_id'].".".(explode(".",$_FILES['child_image']['name'])[1]),$file2);
-//       echo $file;
-    $file2 = realpath("../../../assets/images/uploads/TEMP_".$result['child_id'].".png");
-       $detect = new Detection();
-
-
-       echo $file;
-       echo "<br>";
-       echo $file2;
-       $r = $detect->performDetection($file,$file2);
-       var_dump($r);
+	   $result = $adopted->getChildByParentId($_SESSION['emp_id']);
+       
+	   $detect = new Detection();
+	   
+	   $file2 = base64_encode(file_get_contents($_FILES['child_image']['tmp_name']));
+	   $file = base64_encode(file_get_contents("../../../assets/images/uploads/".$result['child_id'].".".$result['child_image']['image_extension'], true));
+       
+	   $r = $detect->performDetection($file,$file2);
+//       var_dump($r);
+	   if($r['confidence']>0.8){
+		   $adopted = new AdoptedChildrens($_SESSION['branch']);
+		   
+//		   print_r($_FILES);
+//		   die();
+		   $image_blob = new MongoDB\BSON\Binary(file_get_contents($_FILES['child_image']['tmp_name']), MongoDB\BSON\Binary::TYPE_GENERIC);
+		   $temp = explode("/", $_FILES['child_image']['type']);
+		   $img_ext = $temp[1];
+		   $image = array("child_image"=>["image"=>$image_blob, "image_extension"=>$img_ext]);
+		   $adopted->updateImage($result['child_id'], $image);
+		   $_SESSION['image_update'] = "success";
+		   $basepage = BASEPAGES;
+		   header("Location: {$basepage}dashboard.php");
+	   }else{
+		   $_SESSION['image_update'] = "warning";
+		   $basepage = BASEPAGES;
+		   header("Location: {$basepage}childImageVerification.php");
+	   }
    }
 ?>

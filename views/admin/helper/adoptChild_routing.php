@@ -44,6 +44,7 @@ if(isset($_POST['approveAdoption'])){
 //    }
 }
 //The application which was accepted or rejected needs to be removed from table
+$_SESSION['approve_child_adoption'] = "success";
 $basePage= BASEPAGES;
 header("Location: {$basePage}approvals.php")
 

@@ -1,1 +1,21 @@
-1. parent routing m db_name pass karna h parent ka oject banane ke tym pe
+1. admin page
+2. details of employee
+3. removal of employee
+4. video of child for sentimental issues
+5. 3 mails to parent after that alert to employee
+6. view child should only show childs which are not adopted
+7. landing contact us page should mail to a certian employee and admin
+8. timeline for parent adoption
+9. timeline for parent to update child details time by time
+10.parent should not adopt any child once they have adopted one
+11.about us page should contains details about cara website
+12.update details for employee where employee can update there certian details
+13.right top corner of admin page of employee should contain count of notification and a little summary of notification
+14.documents should be verified by api
+15.preperation of one dummy document
+16.email should be sent by some other id
+17.email ui for child adopted successfully
+18.email ui for alert about image upload by parent
+19.Images of different parents with there child is shown at the landing page
+20.chat system
+

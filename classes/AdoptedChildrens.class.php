@@ -21,6 +21,8 @@ class AdoptedChildrens
 		$child = $children->getChild($child_id);
 		$adopted_child_id = "DADAR_ADCHD_" .($this->getChildrenCount()+1);
 		$this->collection->insertOne(["adopted_child_id"=>$adopted_child_id, "child_id"=>$child_id, "parent_id"=>$parent_id, "child_consent_document"=>["child_document"=>$child_document,"document_ext"=>$document_ext], "child_img_verified"=>0, "child_image"=>$child_image, "pending_approval_id"=>$pending_approval_id, "adopted_date"=>date("Y-m-d h:i:s"), "last_updated_at"=>date("Y-m-d h:i:s")]);
+		$data = array("is_adopted"=>"YES");
+		$children->updateChild($child_id, $data);
 	}
 	
 	public function getChildrenCount(){
@@ -31,7 +33,12 @@ class AdoptedChildrens
 	public function updateImage($adopted_child_id, $data){
 		$data['last_updated_at'] = date("Y-m-d h:i:s");
 		$data['child_img_verified'] = 1;
-		$this->collection->updateOne(array("adopted_child_id" => $adopted_child_id), $data);
+		$newdata=array('$set'=>$data);
+		$rs = $this->collection->updateOne(array("child_id" => $adopted_child_id), $newdata);
+		
+		require_once('Children.class.php');
+		$child = new Children($_SESSION['branch']);
+		$child->updateChild($adopted_child_id, $data);
 	}
 	
 	public function getAllAdoptedChild(){

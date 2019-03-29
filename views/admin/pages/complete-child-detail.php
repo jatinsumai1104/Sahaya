@@ -90,17 +90,20 @@ file_put_contents("../../../assets/documents/".$array[0]['child_id'].".".$array[
 		</div>
 
 		<div class="panel-footer">
-			<a data-original-title="Broadcast Message" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary"><i class="glyphicon glyphicon-envelope"></i></a>
+			<a data-original-title="Broadcast Message" data-toggle="tooltip" type="button" class="btn btn-sm btn-info" href="<?php echo BASEPAGES;?>childrens.php">BACK</a>
 			<span class="pull-right">
+				<?php if($_SESSION['emp_role'] == 3 && $array[0]['is_adopted'] == "NO"){?>
 				<form action="<?php echo BASEURL."views/admin/helper/request_child.php";?>" method="post">
 					<input name="child_id" value="<?php echo $array[0]['child_id'];?>" hidden>
-                    <?php if($_SESSION['emp_role'] == 3){?>
                     <button type="submit" class="btn btn-primary" name="requestChild">Request Adoption</button>
-                    <?php }else{?>
-                    <button type="submit" class="btn btn-primary" name="updateDetails">Update Details</button>
-                    <?php }?>
 				</form>
-
+				<?php }else if($_SESSION['emp_role'] != 3){?>
+				<form action="<?php echo BASEPAGES."submitChild.php";?>" method="post">
+					<input name="child_id" value="<?php echo $array[0]['child_id'];?>" hidden>
+                    <button type="submit" class="btn btn-primary" name="updateDetails">Update Details</button>
+				</form>
+				<?php }?>
+				
 			</span>
 		</div>
 

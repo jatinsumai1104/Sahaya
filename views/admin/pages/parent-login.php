@@ -4,7 +4,14 @@ require_once('../includes/header-bp.php');
 $_SESSION['current_page'] = "Parent Login";
 $_SESSION['db_name'] = "DADAR";
 ?>
-
+<style>
+	body{
+		padding-top: 120px;
+		align-items: center;
+		flex-direction: column;
+		justify-content: center;
+	}
+</style>
 <div class="row">
 	<div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4">
 		<h3 style="color: black;text-align: center;"><span><img src="<?php echo BASEPLUGINS;?>images/logo.png" alt="" width="75px" height="75px"> SAHAYA</span> - THE CHILD ADOPTION</h3>
@@ -26,6 +33,7 @@ $_SESSION['db_name'] = "DADAR";
 							<input class="form-control" placeholder="Password" name="parent_password" type="password" value="" required>
 						</div>
 						<button type="submit" class="btn btn-md btn-info" name="parent_login">Login</button>
+						<a type="button" class="btn btn-md btn-danger" href="<?php echo BASELANDING;?>pages/index.php">Cancel</a>
 					</fieldset>
 				</form>
 			</div>

@@ -170,34 +170,6 @@
 
 <!-- fh5co-content-section -->
 
-<div id="fh5co-services-section" class="fh5co-section-gray">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
-				<h3>Our Projects. Support Us</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit est facilis maiores, perspiciatis accusamus asperiores sint consequuntur debitis.</p>
-			</div>
-		</div>
-	</div>
-	<div class="container">
-		<div class="row text-center">
-			<div class="col-md-4 col-sm-4">
-				
-			</div>
-			<div class="col-md-4 col-sm-4">
-				<div class="services animate-box">
-					<span><i class="icon-heart"></i></span>
-					<h2>Sharmila SenGupta</h2>
-					<h3>Shelter Giving</h3>
-					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-				</div>
-			</div>
-			<div class="col-md-4 col-sm-4">
-				
-			</div>
-		</div>
-	</div>
-</div>
 
 <!-- END What we do -->
 

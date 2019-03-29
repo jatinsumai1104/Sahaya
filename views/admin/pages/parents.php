@@ -42,7 +42,7 @@ $maried_parents = iterator_to_array($parents->getMariedParents());
 				<td><?php  echo $single_parents[$i]['perspective_parent_1']['parent_age'];?></td>
 				<td><?php  echo $single_parents[$i]['perspective_parent_1']['gender'];?></td>
 				<td>
-					<form action="../helper/parent_routing.php" method="post">
+					<form action="<?php echo BASEPAGES;?>parent-complete-details.php" method="post">
 						<input type="text" value="<?php echo $single_parents[$i]['parent_id']?>" hidden name="parent_id">
 						<button type="submit" class="btn btn-sm btn-info" name="view_parent">View</button>
 					</form>
@@ -94,7 +94,7 @@ $maried_parents = iterator_to_array($parents->getMariedParents());
 				<td><?php  echo $maried_parents[$i]['perspective_parent_2']['parent_age'];?></td>
 				<td><?php  echo $maried_parents[$i]['perspective_parent_2']['gender'];?></td>
 				<td>
-					<form action="">
+					<form action="<?php echo BASEPAGES;?>parent-complete-details.php" method="post">
 						<input type="text" value="<?php echo $maried_parents[$i]['parent_id']?>" hidden name="parent_id">
 						<button type="submit" class="btn btn-sm btn-info" name="view_parent">View</button>
 					</form>

@@ -14,7 +14,7 @@
 		$array = iterator_to_array($rs);
 		$basepage = BASEPAGES;
 		if(count($array) != 1){
-		    $_SESSION["emp_login_status"]=LOGINFAILURE;
+		    $_SESSION["login_status"]=LOGINFAILURE;
             $basepage = BASEPAGES;
 		    header("Location: {$basepage}login2.php");
 		}
@@ -67,11 +67,15 @@
 		$baseurl = BASEPAGES;
 		header("Location: {$baseurl}dashboard.php");
 	}else if(isset($_REQUEST['logout']) && $_REQUEST['logout'] == 1){
-		
+		if(explode("_", $_SESSION['emp_id'])[1] == "PRT"){
+			$page = "parent-login.php";
+		}else{
+			$page = "login2.php";
+		}
 		session_destroy();
 		
 		$baseurl = BASEPAGES;
-		header("Location: {$baseurl}login2.php");
+		header("Location: {$baseurl}{$page}");
 	}else if(isset($_REQUEST['parent_login'])){
 		$branch = $_REQUEST['branch'];
 		$parent = new Parents($branch);
@@ -79,7 +83,7 @@
 		$rs = iterator_to_array($array);
 		if(count($rs)!=1){
             $basepage = BASEPAGES;
-            $_SESSION["parent_login_status"]=LOGINFAILURE;
+            $_SESSION["login_status"]=LOGINFAILURE;
             header("Location: {$basepage}parent-login.php");
 		}else{
 			$_SESSION['emp_id'] = $rs[0]['parent_id'];

@@ -70,7 +70,7 @@ class Children
     public function updateChild($child_id,$formdata){
 //        extract($formdata);
         $newdata=array('$set'=>$formdata);
-        $this->collection->updateOne(array("child_id" => $child_id), $newdata);
+        $rs = $this->collection->updateOne(array("child_id" => $child_id), $newdata);
     }
 
 
@@ -93,7 +93,7 @@ class Children
         $rs = null;
 
         if($gender == "MALE"){
-            $rs = $this->collection->find(["gender"=>$gender]);
+            $rs = $this->collection->find(["gender"=>$gender, "is_adopted"=>"NO"]);
         }else{
             $rs = $this->collection->find();
         }
@@ -101,6 +101,10 @@ class Children
         return $rs;
     }
     //function to retrieve children for a particular age group.
+	
+	public function getAllAdoptedChild(){
+		return $this->collection->find(["is_adopted"=>"YES"]);
+	}
 
 }
 

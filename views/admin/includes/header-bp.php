@@ -15,6 +15,7 @@ require_once('../../includes/bootstrap.php');
 	<link href="<?php echo BASEPLUGINS;?>css/datepicker3.css" rel="stylesheet">
 	<link href="<?php echo BASEPLUGINS;?>plugins/bootstrap-fileinput/bootstrap-fileinput.css" rel="stylesheet">
 	<link href="<?php echo BASEPLUGINS;?>css/styles.css" rel="stylesheet">
+	<link href="<?php echo BASEPLUGINS;?>css/loader.css" rel="stylesheet">
 
 	<!--Custom Font-->
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -26,3 +27,20 @@ require_once('../../includes/bootstrap.php');
 </head>
 
 <body>
+
+<div class="loader-wrapper">
+	<div class="loader">
+    <div class="roller"></div>
+    <div class="roller"></div>
+  </div>
+  
+  <div id="loader2" class="loader">
+    <div class="roller"></div>
+    <div class="roller"></div>
+  </div>
+  
+  <div id="loader3" class="loader">
+    <div class="roller"></div>
+    <div class="roller"></div>
+  </div>
+</div>

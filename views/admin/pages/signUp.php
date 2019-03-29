@@ -41,7 +41,7 @@ $_SESSION['current_page'] = 'login';?>
 					</svg><span class="hidden">Select Your Location</span></label>
 				<select class="form-control form__input" name="branch">
 					<option class="form__input" value="DADAR">Dadar</option>
-					<option class="form__input" value="KURLA">Kurla</option>
+<!--					<option class="form__input" value="KURLA">Kurla</option>-->
 				</select>
 <!--				<input id="signup_email" type="text" name="signup_email" class="form__input" placeholder="Email Address" required>-->
 			</div>

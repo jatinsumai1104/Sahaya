@@ -2,6 +2,7 @@
 session_start();
 require_once('../../includes/bootstrap.php');
 if(isset($_POST['register_parent'])){
+	$_SESSION['register_parent'] = "success";
 	if(isset($_POST['is_single_parent'])){
 		
 		//here we have to change dadar to db_name coming from employee session
@@ -53,6 +54,7 @@ if(isset($_POST['register_parent'])){
             $parents->sendApprovalMail($array[0]['perspective_parent_1']['email'], $parent_id);
             $parents->sendApprovalMail($array[0]['perspective_parent_2']['email'], $parent_id);
         }
+		$_SESSION['parent_approval'] = "success";
     }else{
         if(isset($_POST['reject_parent'])){
 
@@ -61,9 +63,11 @@ if(isset($_POST['register_parent'])){
             extract($_POST);
 
             $parents->changeStatusReject($parent_id);
-
+			$_SESSION['parent_approval'] = "warning";
         }
     }
+	$baseurl = BASEPAGES;
+	header("Location: {$baseurl}parents.php");
 }
 
 ?>

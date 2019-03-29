@@ -5,12 +5,17 @@ $_SESSION['current_page'] = "Image Verification";
 require_once('../includes/navigation.php');
 require_once('../includes/sidebar.php');
 require_once('../includes/breadcrumbs.php');
+
+$adopted = new AdoptedChildrens($_SESSION['branch']);
+$result = $adopted->getChildByParentId($_SESSION['emp_id']);
+file_put_contents("../../../assets/images/uploads/".$result['child_id'].".".$result['child_image']["image_extension"],$result['child_image']['image']);
 ?>
+
 <div class="row">
     <div class="row">
         <div class="col-md-12" style="margin: 30px;">
             <label class="control-label col-md-2">Child Prev Image</label>
-            <img src="<?php echo BASEPLUGINS;?>images/uploads/DADAR_CHD_1.jpeg" class="img-responsive" alt="" width="200px; height:150px;">
+            <img src="<?php echo BASEPLUGINS;?>images/uploads/<?php echo $result['child_id'].".".$result['child_image']['image_extension'];?>" class="img-responsive" alt="" width="200px; height:150px;">
         </div>
         <form action="../helper/childMatching.php" method="post" enctype="multipart/form-data">
             <div class="col-md-12" style="margin: 30px;">

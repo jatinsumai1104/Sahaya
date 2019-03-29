@@ -40,7 +40,7 @@ require_once('../includes/breadcrumbs.php');
 
     $children = new Children($_SESSION['branch']);
     $parent = new Parents($_SESSION['branch']);
-    if($_SESSION['emp_role']==3){
+    if($_SESSION['emp_role']==3 && $_SESSION['parent_status'] == 1){
 
         $result = $parent->getParent($_SESSION['emp_id']);
 
@@ -49,8 +49,6 @@ require_once('../includes/breadcrumbs.php');
         $rs = $children->getChildrenByGender($result[0]['perspective_parent_1']['gender']);
 
         $array = iterator_to_array($rs);
-
-
 
     }else{
         $rs = $children->getChildren();
@@ -63,7 +61,7 @@ require_once('../includes/breadcrumbs.php');
     <form action="complete-child-detail.php" method="post">
         <div class="col-md-3 col-sm-6 col-xs-6">
             <div class="card">
-                <img src="../../../assets/images/uploads/<?php echo $array[$i]['child_id'].".".$array[$i]['child_image']["image_extension"] ;?>" class="img-responsive" alt="<?php echo $array[$i]["child_name"];?>" width="300px;" height="210px;">
+                <img src="../../../assets/images/uploads/<?php echo $array[$i]['child_id'].".".$array[$i]['child_image']["image_extension"] ;?>" alt="<?php echo $array[$i]["child_name"];?>" width="287px;" height="161px;">
                 <h1>
                     <?php echo $array[$i]["child_name"];?>
                 </h1>
